@@ -1,7 +1,7 @@
 import { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = "https://etshub.org";
+  const baseUrl = "https://ets-frontend-omega.vercel.app";
 
   const staticPages = [
     {
