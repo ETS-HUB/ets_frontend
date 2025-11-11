@@ -11,7 +11,7 @@ export async function POST(
 
     const isNumeric = /^\d+$/.test(id);
 
-    let query = supabase.from("volunteers").select("*");
+    let query = supabase.from("volunteers").select("id");
 
     if (isNumeric) {
       query = query.eq("id", id);
@@ -30,17 +30,8 @@ export async function POST(
       );
     }
 
-    const newCount = (volunteer.appreciation_count || 0) + 1;
-
     const { data, error } = await supabase
-      .from("volunteers")
-      .update({
-        appreciation_count: newCount,
-        updatedAt: new Date().toISOString(),
-      })
-      .eq("id", volunteer.id)
-      .select()
-      .single();
+      .rpc('increment_appreciation', { volunteer_id: volunteer.id });
 
     if (error) {
       console.error("Supabase error:", error);
