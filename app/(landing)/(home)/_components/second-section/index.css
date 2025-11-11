@@ -1,0 +1,26 @@
+.delay-0 {
+  animation-delay: 0s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+.delay-400 {
+  animation-delay: 0.4s;
+}
+
+.overlay {
+  opacity: 0.7;
+  animation: fadeToOverlay 1.2s ease-in-out forwards;
+}
+
+@keyframes fadeToOverlay {
+  to {
+    opacity: 0.4;
+  }
+}

@@ -5,22 +5,34 @@
   --foreground: #171717;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  --color-primary: #ffffff;
+  --color-tertiary: #ffe866;
+  --color-secondary: #3a0ca3;
+  --color-lightblue: #4361ee;
+  --color-lightgray: #444444;
+  --color-gray: #5a5a5a;
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-varela-round: "Varela Round", sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #ffffff;
     --foreground: #ededed;
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-montserrat), var(--font-varela-round), sans-serif;
+}
+
+div::-webkit-scrollbar {
+  display: none;
 }

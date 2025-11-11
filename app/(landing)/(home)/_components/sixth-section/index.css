@@ -1,0 +1,83 @@
+@keyframes slideUpFromBottom {
+  from {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slideUpFromBottom 0.5s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scaleIn 0.5s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInFromRight 0.5s ease-out forwards;
+}
+
+.card-item {
+  opacity: 0;
+  transform: translateY(100px);
+}
+
+.card-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.icon-item {
+  opacity: 0;
+  transform: scale(0);
+}
+
+.icon-item.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.link-item {
+  opacity: 0;
+  transform: translateX(100px);
+}
+
+.link-item.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@media (max-width: 767px) {
+  .card-item,
+  .icon-item,
+  .link-item {
+    opacity: 1;
+    transform: none;
+  }
+}

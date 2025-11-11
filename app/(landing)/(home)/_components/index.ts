@@ -1,0 +1,9 @@
+export { default as HeroSection } from "./hero-section";
+export { default as FirstSection } from "./first-section";
+export { default as SecondSection } from "./second-section";
+export { default as ThirdSection } from "./third-section";
+export { default as FourthSection } from "./fourth-section";
+export { default as SixthSection } from "./sixth-section";
+export { default as SeventhSection } from "./seventh-section";
+export { default as EightSection } from "./eight-section";
+export { default as ContactFormSection } from "./contact_form-section";

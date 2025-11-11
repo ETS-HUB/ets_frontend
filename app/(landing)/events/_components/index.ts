@@ -1,0 +1,1 @@
+export { default as EventHeroSection } from "./hero-section";
