@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Montserrat, Varela_Round } from "next/font/google";
 import "./globals.css";
-import { Analytics } from "./components/Analytics";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
