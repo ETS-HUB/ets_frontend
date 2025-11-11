@@ -15,7 +15,6 @@ const varelaRound = Varela_Round({
   display: "swap",
 });
 
-// Site Configuration
 const siteConfig = {
   name: "ETS Hub",
   title: "ETS Hub - Empowering Tech Students & Innovators",
@@ -24,10 +23,8 @@ const siteConfig = {
   url: "https://etshub.org",
   ogImage: "https://etshub.org/og-image.jpg",
   links: {
-    twitter: "https://twitter.com/etshub",
-    instagram: "https://instagram.com/etshub",
-    linkedin: "https://linkedin.com/company/etshub",
-    github: "https://github.com/etshub",
+    instagram: "https://instagram.com/etshubhq",
+    linkedin: "https://linkedin.com/company/educationtechsummit",
   },
 };
 
