@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase-server";
 
-// POST - Increment appreciation count
 export async function POST(
   request: Request,
   context: { params: Promise<{ id: string }> }
@@ -10,10 +9,8 @@ export async function POST(
     const { id } = await context.params;
     const supabase = await createClient();
 
-    // Check if id is a number (ID) or string (slug)
     const isNumeric = /^\d+$/.test(id);
 
-    // First, get the current volunteer
     let query = supabase.from("volunteers").select("*");
 
     if (isNumeric) {
@@ -22,7 +19,9 @@ export async function POST(
       query = query.eq("slug", id);
     }
 
-    const { data: volunteer, error: fetchError } = await query.single();
+    const { data: volunteer, error: fetchError } = await query
+      .limit(1)
+      .maybeSingle();
 
     if (fetchError || !volunteer) {
       return NextResponse.json(
@@ -31,7 +30,6 @@ export async function POST(
       );
     }
 
-    // Increment appreciation count
     const newCount = (volunteer.appreciation_count || 0) + 1;
 
     const { data, error } = await supabase
@@ -46,10 +44,7 @@ export async function POST(
 
     if (error) {
       console.error("Supabase error:", error);
-      return NextResponse.json(
-        { error: error.message },
-        { status: 500 }
-      );
+      return NextResponse.json({ error: error.message }, { status: 500 });
     }
 
     return NextResponse.json(

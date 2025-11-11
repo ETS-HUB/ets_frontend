@@ -3,19 +3,12 @@ import { MetadataRoute } from "next";
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://etshub.org";
 
-  // Static pages
   const staticPages = [
     {
       url: baseUrl,
       lastModified: new Date(),
       changeFrequency: "daily" as const,
       priority: 1,
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
     },
     {
       url: `${baseUrl}/team`,
@@ -29,19 +22,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "daily" as const,
       priority: 0.9,
     },
-    {
-      url: `${baseUrl}/contact`,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    },
   ];
 
-  // Fetch dynamic events
   let eventPages: MetadataRoute.Sitemap = [];
   try {
     const eventsRes = await fetch(`${baseUrl}/api/events`, {
-      next: { revalidate: 3600 }, // Revalidate every hour
+      next: { revalidate: 3600 },
     });
     if (eventsRes.ok) {
       const events = await eventsRes.json();
@@ -56,7 +42,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     console.error("Error fetching events for sitemap:", error);
   }
 
-  // Fetch dynamic team members
   let teamPages: MetadataRoute.Sitemap = [];
   try {
     const teamRes = await fetch(`${baseUrl}/api/volunteers`, {
