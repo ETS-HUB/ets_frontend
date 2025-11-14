@@ -33,7 +33,7 @@ export default function Login() {
 
       if (data.user) {
         toast.success("Logged in successfully!");
-        router.push("/admin/dashboard");
+        router.push("/admin/events");
         router.refresh();
       }
     } catch (error) {
@@ -47,11 +47,11 @@ export default function Login() {
     <div className="min-h-screen flex text-lightgray items-center justify-center bg-secondary">
       <div className="absolute top-8 left-8">
         <Link href="/">
-          <Image src={logo} alt="Genius Tutors" className="h-auto w-40" />
+          <Image src={logo} alt="Genius Tutors" className="h-auto w-32 md:w-40" />
         </Link>
       </div>
-      <div className="max-w-2xl mx-10 w-full bg-white p-8 rounded-lg shadow-md">
-        <h1 className="text-3xl font-bold text-center mb-6">
+      <div className="max-w-2xl mx-5 md:mx-10 w-full bg-white p-8 rounded-lg shadow-md">
+        <h1 className="md:text-2xl text-lg lg:text-3xl font-bold text-center mb-6">
           Login to dashboard
         </h1>
 
@@ -69,7 +69,7 @@ export default function Login() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="admin@example.com"
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full text-sm md:text-base px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
               required
               disabled={loading}
             />

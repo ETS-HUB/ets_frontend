@@ -161,9 +161,10 @@ const EventPage: React.FC = () => {
   return (
     <section>
       <EventHeroSection />
+      <div className="px-3 h-64 mt-20 sm:px-4 md:px-6 lg:px-12 xl:px-20 2xl:px-40 md:container mx-auto py-12" />
       <div className="px-3 sm:px-4 md:px-6 lg:px-12 xl:px-20 2xl:px-40 md:container mx-auto py-12">
         <div className="mb-8 md:mb-12 space-y-6">
-          <form onSubmit={handleSearch} className="flex mt-10 md:mt-0 gap-2 max-w-2xl">
+          <form onSubmit={handleSearch} className="flex gap-2 max-w-2xl">
             <div className="relative flex-1">
               <Search01Icon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
               <input

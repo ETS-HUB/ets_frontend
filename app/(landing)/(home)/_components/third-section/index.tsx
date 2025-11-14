@@ -82,11 +82,11 @@ const ThirdSection: React.FC = () => {
 
   return (
     <section
-      className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-40 container mx-auto"
+      className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 px-7 sm:px-8 lg:px-20 xl:px-40 container mx-auto"
       aria-labelledby="third-section-heading"
     >
       <div className="flex flex-col lg:flex-row items-start gap-8 sm:gap-10 md:gap-12 lg:gap-14 xl:gap-16">
-        <div className="flex flex-col w-full lg:w-[45%] xl:w-[40%]">
+        <div className="flex flex-col w-full">
           <h2
             id="third-section-heading"
             className="uppercase text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl leading-tight sm:leading-snug md:leading-[1.4] lg:leading-[45px] font-mont text-[#1a1a1a] font-bold"
@@ -110,7 +110,7 @@ const ThirdSection: React.FC = () => {
           </ul>
         </div>
 
-        <div className="flex flex-col gap-y-4 sm:gap-y-5 md:gap-y-6 font-normal w-full lg:w-[55%] xl:w-[60%]">
+        <div className="flex flex-col gap-y-4 sm:gap-y-5 md:gap-y-6 font-normal w-full">
           <h3 className="uppercase text-[#1A1A1A] text-lg sm:text-xl md:text-2xl leading-tight sm:leading-relaxed font-semibold">
             Shaping lives positively
           </h3>

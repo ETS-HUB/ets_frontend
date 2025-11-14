@@ -33,15 +33,15 @@ const Button: React.FC<ButtonProps> = ({
 
   const variantClasses: Record<ButtonVariant, string> = {
     primary:
-      "h-[3rem] rounded-[12px] border border-neutral-black bg-tertiary px-6 py-4 hover:scale-105 transition-transform sm:mt-10",
+      "h-[3rem] rounded-[12px] border border-neutral-black bg-tertiary px-3 sm:px-6 py-4 hover:scale-105 transition-transform sm:mt-10 whitespace-nowrap",
 
     secondary:
-      "h-[2.5rem] rounded-lg border border-neutral-black bg-secondary px-5 py-3 hover:scale-95 hover:bg-transparent",
+      "h-[2.5rem] rounded-lg border border-neutral-black bg-secondary px-3 sm:px-5 py-3 hover:scale-95 hover:bg-transparent whitespace-nowrap",
 
     tertiary:
-      "h-[2.25rem] bg-tertiary hover:bg-opacity-80 rounded-[8px] px-4 py-2",
+      "h-[2.25rem] bg-tertiary hover:bg-opacity-80 rounded-[8px] px-2 sm:px-4 py-4 whitespace-nowrap",
 
-    gray: "h-[2.5rem] rounded-lg border border-gray-300 bg-gray-200 text-gray-700 px-5 py-3 hover:scale-[1.05] transition-transform",
+    gray: "h-[2.5rem] rounded-lg border border-gray-300 bg-gray-200 text-gray-700 px-3 sm:px-5 py-3 hover:scale-[1.05] transition-transform whitespace-nowrap",
   };
 
   const getWidthClass = (size?: string, isMobile: boolean = false): string => {

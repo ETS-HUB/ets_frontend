@@ -18,7 +18,7 @@ const EventHeroSection = () => {
                 ALL EVENTS
               </h1>
               <p className="text-blue-50 text-lg md:text-xl lg:text-2xl leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0">
-                This is a good thing that will happen. Join us for exciting tech
+                Join us for exciting tech
                 events, workshops, and networking opportunities designed to
                 foster innovation and collaboration within our campus community.
               </p>
