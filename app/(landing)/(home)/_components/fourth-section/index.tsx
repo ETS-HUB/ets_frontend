@@ -30,61 +30,61 @@ const FourthSection: React.FC = () => {
   const images: ImageData[] = useMemo(
     () => [
       {
-        full: "https://res.cloudinary.com/dwiq71xwx/image/upload/w_600,q_50,f_auto/v1742086712/ets0_qjimjs.jpg",
+        full: "https://res.cloudinary.com/dwiq71xwx/image/upload/w_800,q_50,f_auto/v1742086712/ets0_qjimjs.jpg",
         thumb:
           "https://res.cloudinary.com/dwiq71xwx/image/upload/w_300,q_30/v1742086712/ets0_qjimjs.jpg",
         id: "img0",
       },
       {
-        full: "https://res.cloudinary.com/dwiq71xwx/image/upload/w_600,q_50,f_auto/v1742086712/ets1_ruo78f.jpg",
+        full: "https://res.cloudinary.com/dwiq71xwx/image/upload/w_800,q_50,f_auto/v1742086712/ets1_ruo78f.jpg",
         thumb:
           "https://res.cloudinary.com/dwiq71xwx/image/upload/w_300,q_30/v1742086712/ets1_ruo78f.jpg",
         id: "img1",
       },
       {
-        full: "https://res.cloudinary.com/dwiq71xwx/image/upload/w_600,q_50,f_auto/v1742086712/ets2_jzf8xz.jpg",
+        full: "https://res.cloudinary.com/dwiq71xwx/image/upload/w_800,q_50,f_auto/v1742086712/ets2_jzf8xz.jpg",
         thumb:
           "https://res.cloudinary.com/dwiq71xwx/image/upload/w_300,q_30/v1742086712/ets2_jzf8xz.jpg",
         id: "img2",
       },
       {
-        full: "https://res.cloudinary.com/dwiq71xwx/image/upload/w_600,q_50,f_auto/v1742086712/ets3_jybzwx.jpg",
+        full: "https://res.cloudinary.com/dwiq71xwx/image/upload/w_800,q_50,f_auto/v1742086712/ets3_jybzwx.jpg",
         thumb:
           "https://res.cloudinary.com/dwiq71xwx/image/upload/w_300,q_30/v1742086712/ets3_jybzwx.jpg",
         id: "img3",
       },
       {
-        full: "https://res.cloudinary.com/dwiq71xwx/image/upload/w_600,q_50,f_auto/v1742086712/ets4_wubsrw.jpg",
+        full: "https://res.cloudinary.com/dwiq71xwx/image/upload/w_800,q_50,f_auto/v1742086712/ets4_wubsrw.jpg",
         thumb:
           "https://res.cloudinary.com/dwiq71xwx/image/upload/w_300,q_30/v1742086712/ets4_wubsrw.jpg",
         id: "img4",
       },
       {
-        full: "https://res.cloudinary.com/dwiq71xwx/image/upload/w_600,q_50,f_auto/v1742086712/ets5_jt1zp1.jpg",
+        full: "https://res.cloudinary.com/dwiq71xwx/image/upload/w_800,q_50,f_auto/v1742086712/ets5_jt1zp1.jpg",
         thumb:
           "https://res.cloudinary.com/dwiq71xwx/image/upload/w_300,q_30/v1742086712/ets5_jt1zp1.jpg",
         id: "img5",
       },
       {
-        full: "https://res.cloudinary.com/dwiq71xwx/image/upload/w_600,q_50,f_auto/v1742086714/ets7_nrjhq7.jpg",
+        full: "https://res.cloudinary.com/dwiq71xwx/image/upload/w_800,q_50,f_auto/v1742086714/ets7_nrjhq7.jpg",
         thumb:
           "https://res.cloudinary.com/dwiq71xwx/image/upload/w_300,q_30/v1742086714/ets7_nrjhq7.jpg",
         id: "img6",
       },
       {
-        full: "https://res.cloudinary.com/dwiq71xwx/image/upload/w_600,q_50,f_auto/v1742086712/ets8_eiwnfc.jpg",
+        full: "https://res.cloudinary.com/dwiq71xwx/image/upload/w_800,q_50,f_auto/v1742086712/ets8_eiwnfc.jpg",
         thumb:
           "https://res.cloudinary.com/dwiq71xwx/image/upload/w_300,q_30/v1742086712/ets8_eiwnfc.jpg",
         id: "img7",
       },
       {
-        full: "https://res.cloudinary.com/dwiq71xwx/image/upload/w_600,q_50,f_auto/v1742086712/ets9_rz3czz.jpg",
+        full: "https://res.cloudinary.com/dwiq71xwx/image/upload/w_800,q_50,f_auto/v1742086712/ets9_rz3czz.jpg",
         thumb:
           "https://res.cloudinary.com/dwiq71xwx/image/upload/w_300,q_30/v1742086712/ets9_rz3czz.jpg",
         id: "img8",
       },
       {
-        full: "https://res.cloudinary.com/dwiq71xwx/image/upload/w_600,q_50,f_auto/v1742086712/ets13_gfm7sj.jpg",
+        full: "https://res.cloudinary.com/dwiq71xwx/image/upload/w_800,q_50,f_auto/v1742086712/ets13_gfm7sj.jpg",
         thumb:
           "https://res.cloudinary.com/dwiq71xwx/image/upload/w_300,q_30/v1742086712/ets13_gfm7sj.jpg",
         id: "img9",
@@ -195,10 +195,11 @@ const FourthSection: React.FC = () => {
   return (
     <>
       <section
-        className="container mx-auto px-7 sm:px-8 lg:px-20 xl:px-40 relative mb-16 md:mb-24 h-full"
+        className="lg:container mx-auto px-5 md:px-10 relative mb-16 md:mb-24 h-full"
+        data-name="about"
         id="about"
       >
-        <div className="flex w-full lg:flex-row flex-col gap-6 lg:gap-10 items-center">
+        <div className="flex w-full lg:flex-row flex-col gap-6 lg:gap-10 justify-center items-center">
           <div className={`w-full lg:w-1/2 `}>
             <div className="w-full gap-y-3 md:gap-y-4 mb-4 flex flex-col justify-start items-start">
               <h2 className="text-2xl sm:text-3xl md:text-[40px] capitalize text-secondary font-semibold">
@@ -217,7 +218,7 @@ const FourthSection: React.FC = () => {
               build successful tech careers while addressing real-world
               educational challenges.
             </p>
-            <div className="mt-6 md:mt-0">
+            <div className="mt-6 md:mt-8">
               <a href="#contact">
                 <Button className="uppercase border text-sm md:text-base">
                   get in touch

@@ -66,7 +66,7 @@ const ContactFormSection: React.FC = () => {
 
   return (
     <div
-      className="container lg:px-40 md:px-20 px-7 mx-auto lg:mb-24"
+      className="lg:container px-10 mx-auto lg:mb-24"
       data-name="contact"
       id="contact"
     >

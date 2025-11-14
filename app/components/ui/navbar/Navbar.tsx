@@ -189,7 +189,7 @@ const Navbar: React.FC<NavbarProps> = ({ fixed }) => {
       role="navigation"
       aria-label="Main navigation"
     >
-      <div className="px-3 sm:px-4 md:px-6 md:mt-4 lg:px-12 xl:px-20 2xl:px-40 md:container mx-auto top-0 flex h-12 w-full items-center justify-between transition-all duration-300 ease-out md:top-0 md:h-14 md:gap-3 lg:h-20 xl:gap-0">
+      <div className="px-4 lg:container mx-auto top-0 flex h-12 w-full items-center justify-between transition-all duration-300 ease-out md:top-0 md:h-28 md:gap-3 lg:h-28 xl:gap-0">
         <Link
           href="/"
           className="font-semibold text-lg lg:text-3xl text-[#3745c0] shrink-0"
@@ -206,7 +206,7 @@ const Navbar: React.FC<NavbarProps> = ({ fixed }) => {
         </Link>
 
         <div
-          className={`hidden items-center justify-center font-medium md:flex md:space-x-6 lg:space-x-10 text-sm md:text-[15px] ${
+          className={`hidden items-center whitespace-nowrap justify-center font-medium md:flex md:space-x-6 lg:space-x-10 text-sm md:text-[15px] ${
             scrolled && !fixed ? "text-lightgray" : "text-primary"
           }`}
         >
@@ -215,12 +215,12 @@ const Navbar: React.FC<NavbarProps> = ({ fixed }) => {
           <Link href="/events" className={navLinkStyles}>
             Events
           </Link>
-          {renderNavLink("sponsors", "Sponsors")}
+          {/* {renderNavLink("sponsors", "Sponsors")} */}
           {renderNavLink("contact", "Contact")}
           <Link href="/team" className={navLinkStyles}>
             Meet the team
           </Link>
-          <Button variant="tertiary" width="fit" className="ml-2">
+          <Button variant="tertiary" width="full" className="ml-2">
             <Link
               href="https://tcvo2a81y59.typeform.com/to/zBMnGxnY"
               target="_blank"

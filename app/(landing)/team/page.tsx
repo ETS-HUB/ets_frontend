@@ -153,7 +153,7 @@ const TeamPage = () => {
         </div>
       </section>
       <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="lg:container md:px-10 mx-auto px-5 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
               Our Creative Minds
@@ -195,7 +195,6 @@ const TeamPage = () => {
                       animationDelay: `${index * 100}ms`,
                     }}
                   >
-                    {/* Image section */}
                     <div className="aspect-4/5 bg-linear-to-br from-gray-100 to-gray-200 relative overflow-hidden shrink-0">
                       {member.image ? (
                         <Image

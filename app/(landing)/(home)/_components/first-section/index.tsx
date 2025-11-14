@@ -11,9 +11,9 @@ const FirstSection: React.FC = () => {
 
   return (
     <>
-      <div className="container mx-auto px-7 md:px-8 lg:px-20 xl:px-40 relative mb-16 md:mb-24">
-        <div className="flex w-full lg:flex-row flex-col lg:gap-x-10 xl:gap-x-20 items-center">
-          <div className="order-last lg:order-first w-full lg:w-1/2 xl:w-[500px] mt-10 lg:mt-0">
+      <div className="lg:container mx-auto px-5 md:px-10 relative mb-16 md:mb-24">
+        <div className="flex w-full lg:flex-row flex-col lg:gap-x-10 xl:gap-x-20 justify-between items-center">
+          <div className="order-last lg:order-first w-full lg:w-1/2 mt-10 lg:mt-0">
             <AnimationWrapper
               className="relative rounded-lg overflow-hidden aspect-video lg:aspect-square w-full"
               delay={0}
@@ -24,7 +24,7 @@ const FirstSection: React.FC = () => {
               <Image
                 width={600}
                 height={600}
-                src="https://res.cloudinary.com/dwiq71xwx/image/upload/w_600,q_80,f_auto/v1742086712/community_djtv4p.jpg"
+                src="https://res.cloudinary.com/dwiq71xwx/image/upload/w_1000,q_100,f_auto/v1742086712/community_djtv4p.jpg"
                 className="w-full h-full object-cover animate-image"
                 alt="ets-featured-image"
               />

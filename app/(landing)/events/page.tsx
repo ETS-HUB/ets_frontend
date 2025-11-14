@@ -161,8 +161,8 @@ const EventPage: React.FC = () => {
   return (
     <section>
       <EventHeroSection />
-      <div className="px-3 h-64 mt-20 sm:px-4 md:px-6 lg:px-12 xl:px-20 2xl:px-40 md:container mx-auto py-12" />
-      <div className="px-3 sm:px-4 md:px-6 lg:px-12 xl:px-20 2xl:px-40 md:container mx-auto py-12">
+      <div className="px-10 h-36 md:h-36 lg:h-4" />
+      <div className="px-10 lg:container mx-auto md:py-12 md:mt-10 lg:mt-16">
         <div className="mb-8 md:mb-12 space-y-6">
           <form onSubmit={handleSearch} className="flex gap-2 max-w-2xl">
             <div className="relative flex-1">

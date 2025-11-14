@@ -105,7 +105,7 @@ const SixthSection: React.FC = () => {
       id="sponsors"
       aria-labelledby="community-heading"
     >
-      <div className="flex px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 2xl:px-40 container mx-auto justify-center items-center text-primary">
+      <div className="flex px-5 md:px-10 lg:container mx-auto justify-center items-center text-primary">
         <div className="flex flex-col w-full">
           {/* Header Section */}
           <div className="flex flex-col lg:w-4/5 xl:w-3/4 2xl:w-2/3 text-center mx-auto gap-y-4 sm:gap-y-5 md:gap-y-6 lg:gap-y-7 mb-8 sm:mb-10 md:mb-12 lg:mb-14">

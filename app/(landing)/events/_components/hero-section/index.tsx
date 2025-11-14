@@ -6,21 +6,21 @@ import { Button } from "../../../../components";
 const EventHeroSection = () => {
   return (
     <section className="relative h-screen sm:h-[85vh] md:h-[75vh] lg:h-[85vh] xl:h-[90vh] w-full mb-12 sm:mb-16 lg:mb-24">
-      <div className="bg-linear-to-br from-blue-500 to-purple-800 py-16 px-3 sm:px-4 md:px-6 lg:px-12 xl:px-20 2xl:px-40 relative overflow-hidden flex items-center justify-center min-h-full">
+      <div className="bg-[#6D28D9] py-16 px-3 sm:px-4 md:px-6 lg:px-12 xl:px-20 2xl:px-40 relative overflow-hidden flex items-center justify-center min-h-full">
         <div className="absolute top-0 right-0 w-64 h-64 opacity-10">
           <div className="w-full h-full bg-linear-to-br from-cyan-400 to-blue-400 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="px-3 sm:px-4 md:px-6 lg:px-12 xl:px-20 2xl:px-40 md:container mx-auto h-full flex items-center justify-center lg:my-20 my-10 relative">
+        <div className="px-5 md:px-10 md:container mx-auto h-full flex items-center justify-center lg:my-20 my-10 relative">
           <div className="grid grid-cols-1 lg:grid-cols-2 md:gap-12 gap-8 items-center w-full">
             <div className="animate-slide_up text-center lg:text-left">
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold text-white md:mb-6 mb-4 leading-tight">
                 ALL EVENTS
               </h1>
               <p className="text-blue-50 text-lg md:text-xl lg:text-2xl leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0">
-                Join us for exciting tech
-                events, workshops, and networking opportunities designed to
-                foster innovation and collaboration within our campus community.
+                Join us for exciting tech events, workshops, and networking
+                opportunities designed to foster innovation and collaboration
+                within our campus community.
               </p>
               <div className="flex justify-center lg:justify-start">
                 <Button className="md:w-auto px-8 uppercase">

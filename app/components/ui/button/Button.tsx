@@ -33,7 +33,7 @@ const Button: React.FC<ButtonProps> = ({
 
   const variantClasses: Record<ButtonVariant, string> = {
     primary:
-      "h-[3rem] rounded-[12px] border border-neutral-black bg-tertiary px-3 sm:px-6 py-4 hover:scale-105 transition-transform sm:mt-10 whitespace-nowrap",
+      "h-[3rem] rounded-[12px] border border-neutral-black bg-tertiary px-3 sm:px-6 py-4 hover:scale-105 transition-transform  whitespace-nowrap",
 
     secondary:
       "h-[2.5rem] rounded-lg border border-neutral-black bg-secondary px-3 sm:px-5 py-3 hover:scale-95 hover:bg-transparent whitespace-nowrap",

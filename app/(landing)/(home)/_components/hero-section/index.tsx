@@ -18,17 +18,17 @@ const HeroSection: React.FC = () => {
     {
       id: 0,
       backgroundImg:
-        "https://res.cloudinary.com/dwiq71xwx/image/upload/w_1200,q_20,f_auto/v1742086712/hero1_ygddd4.jpg",
+        "https://res.cloudinary.com/dwiq71xwx/image/upload/w_1200,q_50,f_auto/v1742086712/hero1_ygddd4.jpg",
     },
     {
       id: 1,
       backgroundImg:
-        "https://res.cloudinary.com/dwiq71xwx/image/upload/w_1200,q_20,f_auto/v1742086712/hero_t4od4j.jpg",
+        "https://res.cloudinary.com/dwiq71xwx/image/upload/w_1200,q_50,f_auto/v1742086712/hero_t4od4j.jpg",
     },
     {
       id: 2,
       backgroundImg:
-        "https://res.cloudinary.com/dwiq71xwx/image/upload/w_1200,q_20,f_auto/v1742086712/banner_v3ewcs.jpg",
+        "https://res.cloudinary.com/dwiq71xwx/image/upload/w_1200,q_50,f_auto/v1742086712/banner_v3ewcs.jpg",
     },
   ];
 
@@ -100,10 +100,10 @@ const HeroSection: React.FC = () => {
                   converge.
                 </p>
 
-                <div className="w-full sm:w-auto">
+                <div className="w-fit sm:w-auto">
                   <Button
                     variant="primary"
-                    width="auto"
+                    width="fit"
                     className="uppercase w-full sm:w-auto px-6 sm:px-8 md:px-10 lg:px-12 text-sm sm:text-base md:text-base"
                   >
                     <Link

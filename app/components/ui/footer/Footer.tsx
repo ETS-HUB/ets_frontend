@@ -91,9 +91,8 @@ const Footer = () => {
 
   return (
     <footer className="mt-10 md:mt-20 pt-10 md:pt-20 bg-secondary text-primary">
-      <div className="container mx-auto px-5 md:px-10 lg:px-40">
+      <div className="lg:container mx-auto px-5 md:px-10">
         <div className="flex flex-col gap-y-12 md:flex-row md:gap-x-8 pb-12">
-          {/* Newsletter Section */}
           <div className="flex flex-col gap-y-6 w-full md:w-[38%] lg:w-[40%]">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold md:w-[85%] lg:w-[85%]">
               Sign up for our newsletter

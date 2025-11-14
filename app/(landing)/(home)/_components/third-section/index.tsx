@@ -82,7 +82,7 @@ const ThirdSection: React.FC = () => {
 
   return (
     <section
-      className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 px-7 sm:px-8 lg:px-20 xl:px-40 container mx-auto"
+      className="mb-12 sm:mb-16 md:mb-20 lg:mb-24 px-5 md:px-10 lg:container mx-auto"
       aria-labelledby="third-section-heading"
     >
       <div className="flex flex-col lg:flex-row items-start gap-8 sm:gap-10 md:gap-12 lg:gap-14 xl:gap-16">
