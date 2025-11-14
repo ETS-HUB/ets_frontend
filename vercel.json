@@ -1,0 +1,16 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "etshub.org"
+        }
+      ],
+      "destination": "https://www.etshub.org/:path*",
+      "permanent": true,
+      "statusCode": 308
+    }
+  ]
+}
