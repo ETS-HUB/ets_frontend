@@ -189,7 +189,7 @@ const Navbar: React.FC<NavbarProps> = ({ fixed }) => {
       role="navigation"
       aria-label="Main navigation"
     >
-      <div className="px-4 lg:container mx-auto top-0 flex h-12 w-full items-center justify-between transition-all duration-300 ease-out md:top-0 md:h-28 md:gap-3 lg:h-28 xl:gap-0">
+      <div className="px-4 lg:container mx-auto top-0 flex h-16 w-full items-center justify-between transition-all duration-300 ease-out md:top-0 md:h-20 md:gap-3 xl:gap-0">
         <Link
           href="/"
           className="font-semibold text-lg lg:text-3xl text-[#3745c0] shrink-0"
