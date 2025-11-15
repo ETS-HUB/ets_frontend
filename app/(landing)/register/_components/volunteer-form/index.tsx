@@ -89,12 +89,14 @@ const VolunteerForm = () => {
   };
 
   const departments = [
-    "Technical (Development)",
-    "Design (UI/UX)",
-    "Content & Media",
-    "Events & Logistics",
-    "Marketing & Outreach",
-    "Operations & Admin",
+    "Publicity & Promotion",
+    "Design",
+    "Content & Social Media Management",
+    "Content Writing & Blogging",
+    "Event Planning & Coordination",
+    "Community Engagement and Management",
+    "Tech Instructors",
+    "Content Creation",
   ];
 
   const experienceLevels = [
@@ -186,7 +188,7 @@ const VolunteerForm = () => {
                 >
                   <Input
                     prefix={<MailOutlined />}
-                    placeholder="john.doe@university.edu"
+                    placeholder="john.doe@gmail.com"
                     size="large"
                   />
                 </Form.Item>
@@ -194,7 +196,7 @@ const VolunteerForm = () => {
               <Col xs={24} md={12}>
                 <Form.Item
                   name="phone"
-                  label="Phone Number"
+                  label="Phone Number (Whatsapp preferred)"
                   rules={[
                     {
                       required: true,

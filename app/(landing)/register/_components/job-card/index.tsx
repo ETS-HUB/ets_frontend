@@ -3,16 +3,16 @@ import Link from "next/link";
 import React from "react";
 
 interface JobCardProps {
-  id: number;
+  slug: string;
   title: string;
   company: string;
   location: string;
-  companyLogo: string;
+  companyLogo: string | null;
   postedDate: string;
 }
 
 export const JobCard: React.FC<JobCardProps> = ({
-  id,
+  slug,
   title,
   company,
   location,
@@ -21,7 +21,7 @@ export const JobCard: React.FC<JobCardProps> = ({
 }) => {
   return (
     <Link
-      href={`/register/internships/${id}`}
+      href={`/register/internships/${slug}`}
       className="bg-white block rounded-xl border border-gray-200 p-10 mb-10 cursor-pointer transition-all duration-300 hover:shadow-lg hover:border-gray-300"
     >
       <div className="flex items-center justify-between gap-4">

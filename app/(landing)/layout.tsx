@@ -26,7 +26,9 @@ const antdTheme: ThemeConfig = {
       boxShadowTertiary: "none",
       hoverBorderColor: "#cccccc",
     },
-
+    DatePicker: {
+      controlHeightLG: 52,
+    },
     Select: {
       controlHeightLG: 52,
     },
