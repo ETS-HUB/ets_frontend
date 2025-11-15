@@ -424,7 +424,6 @@ const VolunteerDetails = () => {
         </div>
       </div>
 
-      {/* Stats Section - Dynamic based on available data */}
       {(volunteer.years_of_experience ||
         volunteer.passionate_about?.length ||
         volunteer.core_strengths?.length) && (
