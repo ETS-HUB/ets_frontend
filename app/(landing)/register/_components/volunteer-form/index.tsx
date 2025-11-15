@@ -12,6 +12,7 @@ import {
   Row,
   Col,
   Space,
+  Modal,
 } from "antd";
 import {
   UserOutlined,
@@ -19,7 +20,10 @@ import {
   PhoneOutlined,
   HomeOutlined,
   BookOutlined,
+  CheckOutlined,
+  HeartFilled,
 } from "@ant-design/icons";
+
 import { Button } from "@/app/components";
 
 const { TextArea } = Input;
@@ -30,31 +34,55 @@ interface VolunteerFormValues {
   lastName: string;
   email: string;
   phone: string;
-  address: string;
-  city: string;
-  state: string;
-  zip: string;
-  resume: File[];
-  coverLetter: File[];
+  university: string;
+  major: string;
+  year: string;
+  graduationDate: Date;
+  department: string[];
+  experienceLevel: string;
   availability: string[];
-  skills: string[];
+  skills: string;
+  motivation: string;
+  previousExperience?: string;
+  terms: boolean;
 }
 
 const VolunteerForm = () => {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
+  const [successModal, setSuccessModal] = useState(false);
 
   const onFinish = async (values: VolunteerFormValues) => {
     setLoading(true);
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      console.log("Form values:", values);
-      message.success(
-        "Application submitted successfully! We'll get back to you soon."
-      );
+      const formattedValues = {
+        ...values,
+        graduationDate: values.graduationDate.toISOString().split("T")[0],
+      };
+
+      const response = await fetch("/api/register/volunteer", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formattedValues),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to submit application");
+      }
+
+      setSuccessModal(true);
       form.resetFields();
     } catch (error) {
-      message.error("Something went wrong. Please try again.");
+      console.log("Submission error:", error);
+      message.error(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again."
+      );
     } finally {
       setLoading(false);
     }
@@ -84,11 +112,7 @@ const VolunteerForm = () => {
   ];
 
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-      }}
-    >
+    <div style={{ minHeight: "100vh" }}>
       <Card
         style={{
           maxWidth: "900px",
@@ -188,7 +212,6 @@ const VolunteerForm = () => {
             </Row>
           </div>
 
-          {/* Academic Information */}
           <div style={{ marginBottom: "32px" }}>
             <h3
               style={{
@@ -401,7 +424,7 @@ const VolunteerForm = () => {
 
             <Form.Item
               name="previousExperience"
-              label="Previous Volunteer/Leadership Experience (Optional)"
+              label="Previous Volunteer/Leadership Experience"
             >
               <TextArea
                 rows={3}
@@ -441,6 +464,41 @@ const VolunteerForm = () => {
             </Button>
           </Form.Item>
         </Form>
+        <Modal
+          open={successModal}
+          footer={null}
+          closable={false}
+          centered
+          onCancel={() => setSuccessModal(false)}
+        >
+          <div className="flex flex-col items-center text-center py-6">
+            <div
+              className="w-20 h-20 rounded-full flex items-center justify-center"
+              style={{ backgroundColor: "#22c55e" }}
+            >
+              <CheckOutlined style={{ fontSize: "40px", color: "white" }} />
+            </div>
+
+            <h2 className="text-2xl font-semibold mt-4">
+              Application Submitted!
+            </h2>
+
+            <p className="mt-2 text-gray-600">
+              Thank you for applying to volunteer with us. We’ll review your
+              application and get back to you soon.
+            </p>
+            <HeartFilled
+              style={{ color: "#f43f5e", fontSize: "28px", marginTop: "10px" }}
+            />
+            <Button
+              variant="primary"
+              className="mt-6"
+              onClick={() => setSuccessModal(false)}
+            >
+              Close
+            </Button>
+          </div>
+        </Modal>
       </Card>
     </div>
   );

@@ -11,19 +11,16 @@ export async function GET(request: Request) {
     const search = searchParams.get("search");
     const tag = searchParams.get("tag");
 
-    // Pagination setup
     const pageSize = limit ? parseInt(limit) : 10;
     const currentPage = page ? parseInt(page) : 1;
     const from = (currentPage - 1) * pageSize;
     const to = from + pageSize - 1;
 
-    // Start building query
     let query = supabase
       .from("events")
       .select("*", { count: "exact" })
       .order("event_date", { ascending: true });
 
-    // Filter by month if provided
     if (month) {
       const year = new Date().getFullYear();
       const monthIndex = new Date(Date.parse(month + " 1, " + year)).getMonth();
@@ -37,32 +34,27 @@ export async function GET(request: Request) {
       query = query.gte("event_date", startDate).lte("event_date", endDate);
     }
 
-    // Search functionality
     if (search) {
       query = query.or(
         `title.ilike.%${search}%,description.ilike.%${search}%,location.ilike.%${search}%`
       );
     }
 
-    // Filter by tag if provided
     if (tag) {
       query = query.contains("tags", [tag]);
     }
 
-    // Apply pagination
     query = query.range(from, to);
 
     const { data, error, count } = await query;
 
     if (error) {
-      console.error("Supabase error:", error);
       return NextResponse.json(
         { error: "Failed to fetch events" },
         { status: 500 }
       );
     }
 
-    // Calculate pagination metadata
     const totalPages = count ? Math.ceil(count / pageSize) : 0;
 
     return NextResponse.json({
@@ -77,7 +69,6 @@ export async function GET(request: Request) {
       },
     });
   } catch (error) {
-    console.error("API error:", error);
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }
@@ -89,7 +80,6 @@ export async function POST(request: Request) {
   try {
     const supabase = await createClient();
 
-    // Optional: Check if user is authenticated
     const {
       data: { user },
     } = await supabase.auth.getUser();
@@ -106,7 +96,6 @@ export async function POST(request: Request) {
       .select();
 
     if (error) {
-      console.error("Supabase error:", error);
       return NextResponse.json(
         { error: "Failed to create event" },
         { status: 500 }
@@ -115,7 +104,6 @@ export async function POST(request: Request) {
 
     return NextResponse.json(data[0], { status: 201 });
   } catch (error) {
-    console.error("API error:", error);
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }

@@ -13,6 +13,7 @@ import {
   Col,
   Space,
   Divider,
+  Modal,
 } from "antd";
 import {
   UserOutlined,
@@ -23,7 +24,10 @@ import {
   TwitterOutlined,
   UploadOutlined,
   GlobalOutlined,
+  CheckOutlined,
+  HeartFilled,
 } from "@ant-design/icons";
+
 import { Button as CustomButton } from "@/app/components";
 
 const { TextArea } = Input;
@@ -33,31 +37,52 @@ interface CommunityFormValues {
   fullName: string;
   email: string;
   phone: string;
-  linkedin: string;
-  github: string;
-  twitter: string;
-  website: string;
-  bio: string;
+  location: string;
+  status: string;
+  institution: string;
+  fieldOfStudy: string;
+  experienceLevel: string;
   interests: string[];
   goals: string[];
-  avatar: File[];
+  bio: string;
+  linkedin?: string;
+  github?: string;
+  twitter?: string;
+  portfolio?: string;
+  referralSource: string;
 }
 
 const CommunityForm = () => {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
+  const [successModal, setSuccessModal] = useState(false);
 
   const onFinish = async (values: CommunityFormValues) => {
     setLoading(true);
     try {
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      console.log("Form values:", values);
-      message.success(
-        "Welcome to the community! Check your email for next steps."
-      );
+      const response = await fetch("/api/register/community", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(values),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to register");
+      }
+
+      setSuccessModal(true);
       form.resetFields();
     } catch (error) {
-      message.error("Something went wrong. Please try again.");
+      console.error("Registration error:", error);
+      message.error(
+        error instanceof Error
+          ? error.message
+          : "Something went wrong. Please try again."
+      );
     } finally {
       setLoading(false);
     }
@@ -101,11 +126,7 @@ const CommunityForm = () => {
   };
 
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-      }}
-    >
+    <div style={{ minHeight: "100vh" }}>
       <Card
         style={{
           maxWidth: "900px",
@@ -172,7 +193,7 @@ const CommunityForm = () => {
               <Col xs={24} md={12}>
                 <Form.Item
                   name="phone"
-                  label="Phone Number"
+                  label="Phone Number (Whatsapp Preferred)"
                   rules={[
                     {
                       required: true,
@@ -213,7 +234,6 @@ const CommunityForm = () => {
             </Form.Item>
           </div>
 
-          {/* Professional Background */}
           <div style={{ marginBottom: "32px" }}>
             <h3
               style={{
@@ -370,7 +390,6 @@ const CommunityForm = () => {
             </Form.Item>
           </div>
 
-          {/* Social Links */}
           <div style={{ marginBottom: "32px" }}>
             <h3
               style={{
@@ -382,7 +401,7 @@ const CommunityForm = () => {
                 paddingBottom: "8px",
               }}
             >
-              Social Links (Optional)
+              Social Links
             </h3>
 
             <Form.Item name="linkedin" label="LinkedIn Profile">
@@ -423,7 +442,6 @@ const CommunityForm = () => {
             </Form.Item>
           </div>
 
-          {/* How did you hear about us */}
           <div style={{ marginBottom: "32px" }}>
             <Form.Item
               name="referralSource"
@@ -478,6 +496,41 @@ const CommunityForm = () => {
             </CustomButton>
           </Form.Item>
         </Form>
+        <Modal
+          open={successModal}
+          footer={null}
+          closable={false}
+          centered
+          onCancel={() => setSuccessModal(false)}
+        >
+          <div className="flex flex-col items-center text-center py-6">
+            <div
+              className="w-20 h-20 rounded-full flex items-center justify-center"
+              style={{ backgroundColor: "#22c55e" }}
+            >
+              <CheckOutlined style={{ fontSize: "40px", color: "white" }} />
+            </div>
+
+            <h2 className="text-2xl font-semibold mt-4">
+              Application Submitted!
+            </h2>
+
+            <p className="mt-2 text-gray-600">
+              Thank you for joining our community. We&apos;ll review your
+              application and get back to you via email / whatsapp soon.
+            </p>
+            <HeartFilled
+              style={{ color: "#f43f5e", fontSize: "28px", marginTop: "10px" }}
+            />
+            <CustomButton
+              variant="primary"
+              className="mt-6"
+              onClick={() => setSuccessModal(false)}
+            >
+              Close
+            </CustomButton>
+          </div>
+        </Modal>
       </Card>
     </div>
   );

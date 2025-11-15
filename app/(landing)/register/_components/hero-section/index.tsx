@@ -27,14 +27,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   contentAlignment = "center",
 }) => {
   const titleSizeClasses = {
-    small: "text-2xl lg:text-3xl xl:text-4xl",
+    small: "text-xl lg:text-3xl xl:text-4xl",
     medium: "text-3xl lg:text-5xl xl:text-6xl",
     large: "text-4xl lg:text-5xl xl:text-6xl",
   };
 
   const descriptionSizeClasses = {
     small: "text-sm",
-    medium: "text-base",
+    medium: "text-sm md:text-base",
     large: "text-lg",
   };
 
@@ -49,14 +49,14 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   return (
     <section className="relative h-[65vh] sm:h-[55vh] md:h-[45vh] lg:h-[55vh] xl:h-[60vh] w-full mb-8 sm:mb-12 lg:mb-14">
       <div
-        className="py-16 px-3 sm:px-4 md:px-6 lg:px-12 xl:px-20 2xl:px-40 relative overflow-hidden flex items-center justify-center min-h-full"
+        className="py-16 px-5 md:px-10 relative overflow-hidden flex items-center justify-center min-h-full"
         style={{ backgroundColor }}
       >
         <div className="absolute top-0 right-0 w-64 h-64 opacity-10">
           <div className="w-full h-full bg-linear-to-br from-cyan-400 to-blue-400 rounded-full blur-3xl"></div>
         </div>
 
-        <div className="px-5 md:px-10 md:container mx-auto h-full flex items-center justify-center lg:my-20 my-10 relative">
+        <div className="md:container mx-auto h-full flex items-center justify-center lg:my-20 my-10 relative">
           <div className="grid grid-cols-1 items-center w-full max-w-4xl">
             <div className={`animate-slide_up ${alignmentClasses}`}>
               <h1

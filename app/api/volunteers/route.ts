@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase-server";
 
-// GET all volunteers with optional filtering and pagination
 export async function GET(request: Request) {
   try {
     const supabase = await createClient();
@@ -12,7 +11,6 @@ export async function GET(request: Request) {
     const limit = searchParams.get("limit");
     const page = searchParams.get("page");
 
-    // Pagination setup
     const pageSize = limit ? parseInt(limit) : 100;
     const currentPage = page ? parseInt(page) : 1;
     const from = (currentPage - 1) * pageSize;
@@ -23,32 +21,27 @@ export async function GET(request: Request) {
       .select("*", { count: "exact" })
       .order("createdAt", { ascending: false });
 
-    // Apply search filter
     if (search) {
       query = query.or(
         `name.ilike.%${search}%,role.ilike.%${search}%,specialty.ilike.%${search}%`
       );
     }
 
-    // Apply role filter
     if (role) {
       query = query.ilike("role", `%${role}%`);
     }
 
-    // Apply pagination
     query = query.range(from, to);
 
     const { data, error, count } = await query;
 
     if (error) {
-      console.error("Supabase error:", error);
       return NextResponse.json(
         { error: "Failed to fetch volunteers" },
         { status: 500 }
       );
     }
 
-    // Return with pagination metadata if requested
     if (page || limit) {
       const totalPages = count ? Math.ceil(count / pageSize) : 0;
       return NextResponse.json({
@@ -66,7 +59,6 @@ export async function GET(request: Request) {
 
     return NextResponse.json(data, { status: 200 });
   } catch (error) {
-    console.error("API error:", error);
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }
@@ -74,7 +66,6 @@ export async function GET(request: Request) {
   }
 }
 
-// POST - Create new volunteer
 function generateSlug(name: string): string {
   return name
     .toLowerCase()
@@ -82,12 +73,10 @@ function generateSlug(name: string): string {
     .replace(/^-+|-+$/g, '');
 }
 
-// POST - Create new volunteer
 export async function POST(request: Request) {
   try {
     const supabase = await createClient();
 
-    // Check authentication
     const {
       data: { user },
     } = await supabase.auth.getUser();
@@ -98,10 +87,8 @@ export async function POST(request: Request) {
 
     const body = await request.json();
 
-    // Generate slug from name
     const slug = generateSlug(body.name);
 
-    // Check if slug already exists
     const { data: existingVolunteer } = await supabase
       .from("volunteers")
       .select("slug")
@@ -130,7 +117,6 @@ export async function POST(request: Request) {
       .single();
 
     if (error) {
-      console.error("Supabase error:", error);
       return NextResponse.json(
         { error: "Failed to create volunteer" },
         { status: 500 }
@@ -139,7 +125,6 @@ export async function POST(request: Request) {
 
     return NextResponse.json(data, { status: 201 });
   } catch (error) {
-    console.error("API error:", error);
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }
