@@ -87,7 +87,7 @@ const Footer = () => {
   const companyLinks: NavLink[] = [
     { name: "About Us", path: "/#about" },
     { name: "Events", path: "/events" },
-    { name: "Blog", path: "#" },
+    // { name: "Blog", path: "#" },
     { name: "Join the Team", path: "/register/volunteer" },
     {
       name: "Join the Community",
