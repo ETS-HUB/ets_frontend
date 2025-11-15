@@ -36,7 +36,7 @@ const Button: React.FC<ButtonProps> = ({
       "h-[3rem] rounded-[12px] border border-neutral-black bg-tertiary px-3 sm:px-6 py-4 hover:scale-105 transition-transform  whitespace-nowrap",
 
     secondary:
-      "h-[2.5rem] rounded-lg border border-neutral-black bg-secondary px-3 sm:px-5 py-3 hover:scale-95 hover:bg-transparent whitespace-nowrap",
+      "h-[2.5rem] rounded-lg border border-neutral-black text-primary bg-secondary px-3 sm:px-5 py-3 hover:scale-95 hover:bg-transparent whitespace-nowrap",
 
     tertiary:
       "h-[2.25rem] bg-tertiary hover:bg-opacity-80 rounded-[8px] px-2 sm:px-4 py-4 whitespace-nowrap",

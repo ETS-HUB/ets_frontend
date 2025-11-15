@@ -113,7 +113,7 @@ const TeamPage = () => {
 
   return (
     <>
-      <section className="relative py-32 bg-linear-to-br from-tertiary via-yellow-200 to-orange-200 overflow-hidden">
+      <section className="relative py-28 bg-linear-to-br from-tertiary via-yellow-200 to-orange-200 overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-10 left-10 w-32 h-32 bg-secondary rounded-full blur-2xl"></div>
           <div className="absolute bottom-20 right-20 w-40 h-40 bg-lightblue rounded-full blur-3xl"></div>

@@ -36,3 +36,10 @@ body {
 div::-webkit-scrollbar {
   display: none;
 }
+
+.ant-input-outlined:focus,
+.ant-input-outlined:focus-within,
+.ant-input-affix-wrapper-focused {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
+}

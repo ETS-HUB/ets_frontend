@@ -81,12 +81,18 @@ const Footer = () => {
     { name: "Events", path: "/events" },
     { name: "Meet the Team", path: "/team" },
     { name: "Sponsors", path: "/#sponsors" },
+    { name: "Internships", path: "/register/internships" },
   ];
 
   const companyLinks: NavLink[] = [
     { name: "About Us", path: "/#about" },
     { name: "Events", path: "/events" },
-    // { name: "Blog", path: "#" },
+    { name: "Blog", path: "#" },
+    { name: "Join the Team", path: "/register/volunteer" },
+    {
+      name: "Join the Community",
+      path: "/register/community",
+    },
   ];
 
   return (
@@ -94,9 +100,14 @@ const Footer = () => {
       <div className="lg:container mx-auto px-5 md:px-10">
         <div className="flex flex-col gap-y-12 md:flex-row md:gap-x-8 pb-12">
           <div className="flex flex-col gap-y-6 w-full md:w-[38%] lg:w-[40%]">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold md:w-[85%] lg:w-[85%]">
-              Sign up for our newsletter
-            </h2>
+            <div className="flex flex-col gap-y-2">
+              <p className="uppercase tracking-widest text-primary text-sm font-semibold">
+                Connect. Create. Grow.
+              </p>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold md:w-[85%] lg:w-[85%]">
+                Sign up for our newsletter
+              </h2>
+            </div>
 
             <form onSubmit={handleSubmit} className="space-y-4 md:w-3/4">
               <div className="relative">
@@ -140,7 +151,7 @@ const Footer = () => {
                 {quickLinks.map((link, index) => (
                   <Link key={index} href={link.path} className="group w-fit">
                     {link.name}
-                    <div className="h-[2px] w-0 bg-primary transition-all duration-300 group-hover:w-full"></div>
+                    <div className="h-0.5 w-0 bg-primary transition-all duration-300 group-hover:w-full"></div>
                   </Link>
                 ))}
               </div>
@@ -177,6 +188,20 @@ const Footer = () => {
                 contact@etshub.org
                 <div className="h-0.5 w-0 bg-primary transition-all duration-300 group-hover:w-full"></div>
               </Link>
+              <div className="gap-4 mt-4 hidden md:flex">
+                {socialLinks.map((social, index) => (
+                  <Link
+                    key={index}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-full border border-primary/40 p-2.5 hover:bg-primary/10 transition-all duration-300"
+                    aria-label={social.name}
+                  >
+                    {social.icon}
+                  </Link>
+                ))}
+              </div>
             </div>
           </div>
 

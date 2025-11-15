@@ -39,6 +39,10 @@ const Navbar: React.FC<NavbarProps> = ({ fixed }) => {
     });
   }, []);
 
+  const isInternshipsPage = (path: string): boolean => {
+    return path.startsWith("/register/internships/");
+  };
+
   const handleSectionClick = useCallback(
     (section: string): boolean => {
       if (isHomePage) {
@@ -133,7 +137,7 @@ const Navbar: React.FC<NavbarProps> = ({ fixed }) => {
   }, [pathname, isHomePage, router, scrollToSection]);
 
   const glassmorphismStyles =
-    scrolled && !fixed
+    (scrolled && !fixed) || isInternshipsPage(pathname)
       ? "bg-white bg-opacity-40 backdrop-blur-md border-white border-opacity-20"
       : "md:bg-transparent bg-primary";
 
