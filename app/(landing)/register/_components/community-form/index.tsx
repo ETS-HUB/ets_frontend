@@ -29,11 +29,25 @@ import { Button as CustomButton } from "@/app/components";
 const { TextArea } = Input;
 const { Option } = Select;
 
+interface CommunityFormValues {
+  fullName: string;
+  email: string;
+  phone: string;
+  linkedin: string;
+  github: string;
+  twitter: string;
+  website: string;
+  bio: string;
+  interests: string[];
+  goals: string[];
+  avatar: File[];
+}
+
 const CommunityForm = () => {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
 
-  const onFinish = async (values) => {
+  const onFinish = async (values: CommunityFormValues) => {
     setLoading(true);
     try {
       await new Promise((resolve) => setTimeout(resolve, 1500));
@@ -72,7 +86,7 @@ const CommunityForm = () => {
   ];
 
   const uploadProps = {
-    beforeUpload: (file) => {
+    beforeUpload: (file: File) => {
       const isImage = file.type.startsWith("image/");
       if (!isImage) {
         message.error("You can only upload image files!");

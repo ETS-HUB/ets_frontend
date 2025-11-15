@@ -25,11 +25,26 @@ import { Button } from "@/app/components";
 const { TextArea } = Input;
 const { Option } = Select;
 
+interface VolunteerFormValues {
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  address: string;
+  city: string;
+  state: string;
+  zip: string;
+  resume: File[];
+  coverLetter: File[];
+  availability: string[];
+  skills: string[];
+}
+
 const VolunteerForm = () => {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
 
-  const onFinish = async (values) => {
+  const onFinish = async (values: VolunteerFormValues) => {
     setLoading(true);
     try {
       await new Promise((resolve) => setTimeout(resolve, 1500));
