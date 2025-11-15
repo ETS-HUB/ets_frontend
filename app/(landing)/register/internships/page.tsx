@@ -70,7 +70,7 @@ const InternshipRegistrationPage = () => {
       setLoading(false);
     }
   };
-
+console.log(jobs)
   useEffect(() => {
     fetchJobs();
   }, [jobType]);
@@ -151,7 +151,7 @@ const InternshipRegistrationPage = () => {
                     title={job.title}
                     company={job.company}
                     location={job.location}
-                    companyLogo={job.company_logo}
+                    companyLogo={job.company_logo ?? ""}
                     postedDate={getPostedDate(job.created_at)}
                   />
                 ))}

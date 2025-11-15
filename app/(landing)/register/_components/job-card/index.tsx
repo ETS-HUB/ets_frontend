@@ -7,7 +7,7 @@ interface JobCardProps {
   title: string;
   company: string;
   location: string;
-  companyLogo: string | null;
+  companyLogo: string;
   postedDate: string;
 }
 
