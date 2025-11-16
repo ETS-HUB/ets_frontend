@@ -198,7 +198,6 @@ const CommunityApplicationList = () => {
           />
         </div>
 
-        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
           <Table
             loading={loading}
             columns={columns}
@@ -210,7 +209,6 @@ const CommunityApplicationList = () => {
             }}
             scroll={{ x: 1200 }}
           />
-        </div>
       </div>
 
       <Modal

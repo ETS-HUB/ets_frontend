@@ -66,7 +66,7 @@ const ContactFormSection: React.FC = () => {
 
   return (
     <div
-      className="lg:container px-10 mx-auto lg:mb-24"
+      className="lg:container px-5 lg:px-10 mx-auto lg:mb-24"
       data-name="contact"
       id="contact"
     >
@@ -100,7 +100,7 @@ const ContactFormSection: React.FC = () => {
           className="w-full flex flex-col gap-y-5 lg:gap-y-10"
         >
           <div className="flex flex-col gap-y-2 w-full">
-            <label className="text-lg lg:text-xl text-[#1a1a1a] font-medium">
+            <label className="text-sm lg:text-xl text-[#1a1a1a] font-medium">
               Email address
             </label>
             <input
@@ -112,7 +112,7 @@ const ContactFormSection: React.FC = () => {
             />
           </div>
           <div className="flex flex-col gap-y-2">
-            <label className="text-lg lg:text-xl text-[#1a1a1a] font-medium">
+            <label className="text-sm lg:text-xl text-[#1a1a1a] font-medium">
               Name
             </label>
             <input
@@ -124,7 +124,7 @@ const ContactFormSection: React.FC = () => {
             />
           </div>
           <div className="flex flex-col gap-y-2">
-            <label className="text-lg lg:text-xl text-[#1a1a1a] font-medium">
+            <label className="text-sm lg:text-xl text-[#1a1a1a] font-medium">
               Message
             </label>
             <textarea

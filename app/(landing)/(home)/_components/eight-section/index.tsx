@@ -31,7 +31,7 @@ const testimonials = [
 const EightSection: React.FC = () => {
   return (
     <div
-      className="md:h-120 h-80 px-10 relative bg-center bg-cover bg-no-repeat mb-16 lg:mb-24 flex items-center justify-center overflow-hidden"
+      className="md:h-120 h-80 lg:px-10 relative bg-center bg-cover bg-no-repeat mb-16 lg:mb-24 flex items-center justify-center overflow-hidden"
       style={{
         backgroundAttachment: "fixed",
         backgroundImage: `url('https://res.cloudinary.com/dwiq71xwx/image/upload/w_2500,q_50,f_auto/v1742087435/community2_bduxqm.jpg')`,

@@ -86,7 +86,7 @@ const AdminRegistrationPage = () => {
   ];
 
   return (
-    <div className="min-h-screenp-6">
+    <div className="min-h-screen">
       <div className="mx-auto">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-[#172554] mb-2">

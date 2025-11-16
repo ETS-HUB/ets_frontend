@@ -69,12 +69,7 @@ export const flipCards = [
             digital design skills and build a professional portfolio.
           </p>
         </div>
-        <Link
-          href="/register/community"
-          target="_blank"
-        >
-          Join community
-        </Link>
+        <Link href="/register/community">Join community</Link>
       </div>
     ),
   },
@@ -137,16 +132,11 @@ export const flipCards = [
           <p>
             This course covers frontend development with React, state
             management, backend API development with Node.js, database
-            integration, and deployment strategies. By the end, you&apos;ll be able
-            to create full-stack applications ready for real-world use.
+            integration, and deployment strategies. By the end, you&apos;ll be
+            able to create full-stack applications ready for real-world use.
           </p>
         </div>
-        <Link
-          href="/register/community"
-          target="_blank"
-        >
-          Join community
-        </Link>
+        <Link href="/register/community">Join community</Link>
       </div>
     ),
   },
@@ -210,17 +200,12 @@ export const flipCards = [
           </p>
           <p>
             Learn to analyze audience behavior, optimize conversion funnels, and
-            use data-driven approaches to improve marketing performance. You&apos;ll
-            create practical marketing plans that can be implemented immediately
-            to grow online presence and drive results.
+            use data-driven approaches to improve marketing performance.
+            You&apos;ll create practical marketing plans that can be implemented
+            immediately to grow online presence and drive results.
           </p>
         </div>
-        <Link
-          href="/register/community"
-          target="_blank"
-        >
-          Join community
-        </Link>
+        <Link href="/register/community">Join community</Link>
       </div>
     ),
   },
@@ -283,18 +268,14 @@ export const flipCards = [
             time-wasting activities.
           </p>
           <p>
-            Through interactive exercises and real-world applications, you&apos;ll
-            develop a personalized productivity system that works with your
-            unique workflow and circumstances. Learn to balance competing
-            priorities and reduce stress while increasing your effectiveness.
+            Through interactive exercises and real-world applications,
+            you&apos;ll develop a personalized productivity system that works
+            with your unique workflow and circumstances. Learn to balance
+            competing priorities and reduce stress while increasing your
+            effectiveness.
           </p>
         </div>
-        <Link
-          href="/register/community"
-          target="_blank"
-        >
-          Join community
-        </Link>
+        <Link href="/register/community">Join community</Link>
       </div>
     ),
   },
@@ -363,9 +344,7 @@ export const flipCards = [
             will help you navigate challenges and drive meaningful results.
           </p>
         </div>
-        <Link href="/register/community" target="_blank">
-          Join community
-        </Link>
+        <Link href="/register/community">Join community</Link>
       </div>
     ),
   },
@@ -427,12 +406,7 @@ export const flipCards = [
             you build stronger relationships and advance your career.
           </p>
         </div>
-        <Link
-          href="/register/community"
-          target="_blank"
-        >
-          Join community
-        </Link>
+        <Link href="/register/community">Join community</Link>
       </div>
     ),
   },
