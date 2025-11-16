@@ -384,7 +384,7 @@ const AdminVolunteersPage = () => {
             <Form.Item
               label="Email"
               name="email"
-              rules={[{ type: "email", message: "Please enter a valid email" }]}
+              rules={[{ required: true, message: "Please enter email" }, { type: "email", message: "Please enter a valid email" }]}
             >
               <Input placeholder="e.g., joshua@example.com" />
             </Form.Item>

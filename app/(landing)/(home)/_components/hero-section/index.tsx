@@ -107,7 +107,7 @@ const HeroSection: React.FC = () => {
                     className="uppercase w-full sm:w-auto px-6 sm:px-8 md:px-10 lg:px-12 text-sm sm:text-base md:text-base"
                   >
                     <Link
-                      href="https://tcvo2a81y59.typeform.com/to/zBMnGxnY"
+                      href="/register/community"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="block w-full"

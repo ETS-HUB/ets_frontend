@@ -70,7 +70,7 @@ export const flipCards = [
           </p>
         </div>
         <Link
-          href="https://tcvo2a81y59.typeform.com/to/zBMnGxnY"
+          href="/register/community"
           target="_blank"
         >
           Join community
@@ -142,7 +142,7 @@ export const flipCards = [
           </p>
         </div>
         <Link
-          href="https://tcvo2a81y59.typeform.com/to/zBMnGxnY"
+          href="/register/community"
           target="_blank"
         >
           Join community
@@ -216,7 +216,7 @@ export const flipCards = [
           </p>
         </div>
         <Link
-          href="https://tcvo2a81y59.typeform.com/to/zBMnGxnY"
+          href="/register/community"
           target="_blank"
         >
           Join community
@@ -290,7 +290,7 @@ export const flipCards = [
           </p>
         </div>
         <Link
-          href="https://tcvo2a81y59.typeform.com/to/zBMnGxnY"
+          href="/register/community"
           target="_blank"
         >
           Join community
@@ -363,7 +363,7 @@ export const flipCards = [
             will help you navigate challenges and drive meaningful results.
           </p>
         </div>
-        <Link href="https://tcvo2a81y59.typeform.com/to/zBMnGxnY" target="_blank">
+        <Link href="/register/community" target="_blank">
           Join community
         </Link>
       </div>
@@ -428,7 +428,7 @@ export const flipCards = [
           </p>
         </div>
         <Link
-          href="https://tcvo2a81y59.typeform.com/to/zBMnGxnY"
+          href="/register/community"
           target="_blank"
         >
           Join community

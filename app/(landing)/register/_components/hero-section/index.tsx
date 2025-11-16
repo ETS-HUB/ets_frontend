@@ -19,7 +19,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   title,
   description,
   buttonText = "Join Community",
-  buttonLink = "https://tcvo2a81y59.typeform.com/to/zBMnGxnY",
+  buttonLink = "/register/community",
   backgroundColor = "#172554",
   showButton = true,
   titleSize = "large",

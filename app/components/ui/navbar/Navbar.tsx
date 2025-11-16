@@ -226,7 +226,7 @@ const Navbar: React.FC<NavbarProps> = ({ fixed }) => {
           </Link>
           <Button variant="tertiary" width="full" className="ml-2">
             <Link
-              href="https://tcvo2a81y59.typeform.com/to/zBMnGxnY"
+              href="/register/community"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -298,7 +298,7 @@ const Navbar: React.FC<NavbarProps> = ({ fixed }) => {
               <li className="pt-2">
                 <Button variant="primary" width="full">
                   <Link
-                    href="https://tcvo2a81y59.typeform.com/to/zBMnGxnY"
+                    href="/register/community"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm"

@@ -27,7 +27,7 @@ const EventHeroSection = () => {
               <div className="flex justify-center lg:justify-start">
                 <Button className="md:w-auto px-8 uppercase">
                   <Link
-                    href="https://tcvo2a81y59.typeform.com/to/zBMnGxnY"
+                    href="/register/community"
                     target="_blank"
                   >
                     Join Community
