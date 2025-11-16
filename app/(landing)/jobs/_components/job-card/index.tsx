@@ -21,7 +21,7 @@ export const JobCard: React.FC<JobCardProps> = ({
 }) => {
   return (
     <Link
-      href={`/register/internships/${slug}`}
+      href={`/jobs/${slug}`}
       className="bg-white block rounded-xl border border-gray-200 p-10 mb-10 cursor-pointer transition-all duration-300 hover:shadow-lg hover:border-gray-300"
     >
       <div className="flex items-center justify-between gap-4">

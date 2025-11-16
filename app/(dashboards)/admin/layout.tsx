@@ -2,9 +2,10 @@
 import React from "react";
 import {
   DashboardSquare02Icon,
-  Calendar02Icon,
   Analytics01Icon,
   TeacherIcon,
+  UserSharingIcon,
+  JobShareIcon,
 } from "hugeicons-react";
 
 import DashboardLayout from "../_components/DashboardLayout";
@@ -29,16 +30,16 @@ const AdminDashboardLayout = ({ children }: { children: React.ReactNode }) => {
       label: "Volunteers",
       path: "/admin/volunteers",
     },
-    // {
-    //   icon: Calendar02Icon,
-    //   label: "Schedule",
-    //   path: "/admin/schedule",
-    // },
-    // {
-    //   icon: Analytics01Icon,
-    //   label: "Documents",
-    //   path: "/admin/documents",
-    // },
+    {
+      icon: UserSharingIcon,
+      label: "Registrations",
+      path: "/admin/registrations",
+    },
+    {
+      icon: JobShareIcon,
+      label: "Jobs",
+      path: "/admin/jobs",
+    },
   ];
 
   if (pathname === "/admin/login") {

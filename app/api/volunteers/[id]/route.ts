@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase-server";
 
-// Helper function to generate slug from name
 export function generateSlug(name: string): string {
   return name
     .toLowerCase()
@@ -9,7 +8,6 @@ export function generateSlug(name: string): string {
     .replace(/^-+|-+$/g, "");
 }
 
-// GET single volunteer by ID or slug
 export async function GET(
   request: Request,
   context: { params: Promise<{ id: string }> }
@@ -18,7 +16,6 @@ export async function GET(
     const { id } = await context.params;
     const supabase = await createClient();
 
-    // Check if id is a number (ID) or string (slug)
     const isNumeric = /^\d+$/.test(id);
 
     let query = supabase.from("volunteers").select("*");
@@ -32,7 +29,6 @@ export async function GET(
     const { data, error } = await query.single();
 
     if (error) {
-      console.error("Supabase error:", error);
       return NextResponse.json(
         { error: "Failed to fetch volunteer" },
         { status: 500 }
@@ -48,7 +44,6 @@ export async function GET(
 
     return NextResponse.json(data, { status: 200 });
   } catch (error) {
-    console.error("API error:", error);
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }
@@ -56,7 +51,6 @@ export async function GET(
   }
 }
 
-// PUT - Update volunteer
 export async function PUT(
   request: Request,
   context: { params: Promise<{ id: string }> }
@@ -65,7 +59,6 @@ export async function PUT(
     const { id } = await context.params;
     const supabase = await createClient();
 
-    // Check authentication
     const {
       data: { user },
     } = await supabase.auth.getUser();
@@ -76,12 +69,10 @@ export async function PUT(
 
     const body = await request.json();
 
-    // Generate slug if name is being updated
     if (body.name) {
       body.slug = generateSlug(body.name);
     }
 
-    // Add updated timestamp
     const volunteerData = {
       ...body,
       updatedAt: new Date().toISOString(),
@@ -95,7 +86,6 @@ export async function PUT(
       .single();
 
     if (error) {
-      console.error("Supabase error:", error);
       return NextResponse.json(
         { error: error.message || "Failed to update volunteer" },
         { status: 500 }
@@ -111,7 +101,6 @@ export async function PUT(
 
     return NextResponse.json(data, { status: 200 });
   } catch (error) {
-    console.error("API error:", error);
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }
@@ -119,7 +108,6 @@ export async function PUT(
   }
 }
 
-// DELETE volunteer
 export async function DELETE(
   request: Request,
   context: { params: Promise<{ id: string }> }
@@ -128,7 +116,6 @@ export async function DELETE(
     const { id } = await context.params;
     const supabase = await createClient();
 
-    // Check authentication
     const {
       data: { user },
     } = await supabase.auth.getUser();
@@ -144,7 +131,6 @@ export async function DELETE(
       .select();
 
     if (error) {
-      console.error("Supabase error:", error);
       return NextResponse.json(
         { error: "Failed to delete volunteer" },
         { status: 500 }
@@ -163,7 +149,6 @@ export async function DELETE(
       { status: 200 }
     );
   } catch (error) {
-    console.error("API error:", error);
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }

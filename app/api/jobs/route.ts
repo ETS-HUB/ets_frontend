@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createServiceClient } from "@/lib/supabase-service";
+import { createClient } from "@/lib/supabase-server";
 
 export async function GET(request: NextRequest) {
   const supabase = createServiceClient();
@@ -12,12 +13,8 @@ export async function GET(request: NextRequest) {
     const location = searchParams.get("location");
     const offset = (page - 1) * limit;
 
-    let query = supabase
-      .from("jobs")
-      .select("*", { count: "exact" })
-      .eq("is_active", true);
+    let query = supabase.from("jobs").select("*", { count: "exact" });
 
-    // Apply filters
     if (jobType && jobType !== "all") {
       query = query.eq("job_type", jobType);
     }
@@ -30,7 +27,6 @@ export async function GET(request: NextRequest) {
       .range(offset, offset + limit - 1);
 
     if (error) {
-      console.error("❌ Error fetching jobs:", error);
       return NextResponse.json(
         { error: "Failed to fetch jobs" },
         { status: 500 }
@@ -47,7 +43,6 @@ export async function GET(request: NextRequest) {
       },
     });
   } catch (error) {
-    console.error("💥 Error:", error);
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }
@@ -57,7 +52,15 @@ export async function GET(request: NextRequest) {
 
 export async function POST(request: NextRequest) {
   try {
-    const supabase = createServiceClient();
+    const supabase = await createClient();
+
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
+    if (!user) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
 
     const body = await request.json();
 
@@ -108,7 +111,6 @@ export async function POST(request: NextRequest) {
       .single();
 
     if (error) {
-      console.error("❌ Error creating job:", error);
       return NextResponse.json({ error: error.message }, { status: 500 });
     }
 
@@ -117,7 +119,6 @@ export async function POST(request: NextRequest) {
       { status: 201 }
     );
   } catch (error) {
-    console.error("💥 Error:", error);
     return NextResponse.json(
       { error: "Internal server error" },
       { status: 500 }

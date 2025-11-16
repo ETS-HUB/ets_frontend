@@ -38,10 +38,15 @@ const antdTheme: ThemeConfig = {
     Input: {
       borderRadius: 6,
       paddingContentVertical: 15,
+      controlHeightLG: 45,
+      paddingContentHorizontal: 20,
     },
     Modal: {
       borderRadius: 8,
       fontFamily: "Montserrat, sans-serif",
+    },
+    Select: {
+      controlHeightLG: 45,
     },
   },
 };

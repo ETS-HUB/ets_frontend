@@ -1,10 +1,11 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { Spin, Empty, message } from "antd";
+import { Spin, Empty } from "antd";
 
-import HeroSection from "../_components/hero-section";
-import JobFilter from "../_components/job-filter";
-import JobCard from "../_components/job-card";
+import HeroSection from "../register/_components/hero-section";
+import JobFilter from "../register/_components/job-filter";
+import JobCard from "./_components/job-card";
+import toast from "react-hot-toast";
 
 interface Job {
   id: string;
@@ -15,6 +16,7 @@ interface Job {
   created_at: string;
   slug: string;
   job_type: string;
+  is_active: boolean;
 }
 
 interface PaginationData {
@@ -64,13 +66,12 @@ const InternshipRegistrationPage = () => {
       setJobs(result.data);
       setPagination(result.pagination);
     } catch (error) {
-      console.error("Error fetching jobs:", error);
-      message.error("Failed to load jobs. Please try again.");
+      toast.error("Failed to load jobs. Please try again.");
     } finally {
       setLoading(false);
     }
   };
-console.log(jobs)
+
   useEffect(() => {
     fetchJobs();
   }, [jobType]);
@@ -102,15 +103,16 @@ console.log(jobs)
       Math.floor(diffDays / 30) > 1 ? "s" : ""
     } ago`;
   };
+  const activeJobs = jobs.filter((job) => job.is_active === true);
 
   return (
     <>
       <HeroSection
-        title="Find Your Internship"
+        title="Find Your Next Job"
         description="Kickstart your career with ETS by joining our internship program. Gain hands-on experience, develop your skills, and contribute to meaningful projects while working alongside industry professionals. Fill out the form to apply for an internship and take the first step towards a rewarding career!"
         titleSize="medium"
         showButton={false}
-        descriptionSize="large"
+        descriptionSize="medium"
       />
       <div>
         <div className="lg:container lg:mx-auto px-5 md:px-10 py-8">
@@ -123,9 +125,9 @@ console.log(jobs)
 
           {loading ? (
             <div className="flex justify-center items-center py-20">
-              <Spin size="large" tip="Loading jobs..." />
+              <Spin size="large" />
             </div>
-          ) : jobs.length === 0 ? (
+          ) : activeJobs.length === 0 ? (
             <div className="flex justify-center items-center py-20">
               <Empty
                 description={
@@ -139,12 +141,12 @@ console.log(jobs)
             <>
               <div className="mb-4">
                 <p className="text-gray-600">
-                  Showing {jobs.length} of {pagination.total} jobs
+                  Showing {activeJobs.length} of {pagination.total} jobs
                 </p>
               </div>
 
               <div>
-                {jobs.map((job) => (
+                {activeJobs.map((job) => (
                   <JobCard
                     slug={job.slug}
                     key={job.id}

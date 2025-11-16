@@ -7,7 +7,6 @@ import {
   DatePicker,
   Radio,
   Checkbox,
-  message,
   Card,
   Row,
   Col,
@@ -25,6 +24,7 @@ import {
 } from "@ant-design/icons";
 
 import { Button } from "@/app/components";
+import toast from "react-hot-toast";
 
 const { TextArea } = Input;
 const { Option } = Select;
@@ -77,8 +77,7 @@ const VolunteerForm = () => {
       setSuccessModal(true);
       form.resetFields();
     } catch (error) {
-      console.log("Submission error:", error);
-      message.error(
+      toast.error(
         error instanceof Error
           ? error.message
           : "Something went wrong. Please try again."
@@ -486,7 +485,7 @@ const VolunteerForm = () => {
             </h2>
 
             <p className="mt-2 text-gray-600">
-              Thank you for applying to volunteer with us. We’ll review your
+              Thank you for applying to volunteer with us. We&apos;ll review your
               application and get back to you soon.
             </p>
             <HeartFilled

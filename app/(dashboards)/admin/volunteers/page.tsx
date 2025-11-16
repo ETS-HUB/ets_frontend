@@ -13,7 +13,6 @@ import {
   Image,
   InputNumber,
   Select,
-  Tag,
 } from "antd";
 import {
   EditOutlined,
@@ -86,7 +85,6 @@ const AdminVolunteersPage = () => {
       setVolunteers(data);
     } catch (error) {
       toast.error("Failed to load volunteers");
-      console.error(error);
     } finally {
       setLoading(false);
     }
@@ -308,6 +306,7 @@ const AdminVolunteersPage = () => {
             type="link"
             icon={<EditOutlined />}
             onClick={() => showEditModal(record)}
+            className="text-secondary!"
           >
             Edit
           </Button>
@@ -325,13 +324,13 @@ const AdminVolunteersPage = () => {
   ];
 
   return (
-    <div className="p-6">
+    <div>
       <div className="flex justify-between items-center mb-6">
         <div>
-          <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+          <h1 className="md:text-3xl text-2xl font-bold text-[#172554] mb-2">
             Volunteers
           </h1>
-          <p className="text-gray-600 mt-1">
+          <p className="text-gray-500 mt-1">
             Manage all ETS volunteers and team members.
           </p>
         </div>
@@ -350,7 +349,6 @@ const AdminVolunteersPage = () => {
           showSizeChanger: true,
           showTotal: (total) => `Total ${total} volunteers`,
         }}
-        scroll={{ x: 1200 }}
       />
 
       <Modal
@@ -359,7 +357,7 @@ const AdminVolunteersPage = () => {
         onCancel={handleModalCancel}
         footer={null}
         width={700}
-        destroyOnClose
+        destroyOnHidden
       >
         <Form
           form={form}
@@ -367,7 +365,6 @@ const AdminVolunteersPage = () => {
           onFinish={handleSubmit}
           className="mt-4"
         >
-          {/* Basic Information */}
           <div className="mb-6">
             <h3 className="text-lg font-semibold text-gray-800 mb-4 pb-2 border-b">
               Basic Information
@@ -496,12 +493,11 @@ const AdminVolunteersPage = () => {
                 )}
               </Upload>
               {uploading && (
-                <p className="text-blue-500 mt-2 text-sm">Uploading image...</p>
+                <p className="text-secondary mt-2 text-sm">Uploading image...</p>
               )}
             </Form.Item>
           </div>
 
-          {/* Personal Details */}
           <div className="mb-6">
             <h3 className="text-lg font-semibold text-gray-800 mb-4 pb-2 border-b">
               Personal Details
@@ -550,7 +546,6 @@ const AdminVolunteersPage = () => {
             </Form.Item>
           </div>
 
-          {/* Social Links */}
           <div className="mb-4">
             <h3 className="text-lg font-semibold text-gray-800 mb-4 pb-2 border-b">
               Links & Social Media
