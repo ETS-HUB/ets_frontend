@@ -137,8 +137,7 @@ const AdminJobApplications = () => {
       }
     } catch (error) {
       toast.error("Failed to delete application");
-    }
-    finally {
+    } finally {
       setDeleteLoading(false);
     }
   };
@@ -263,7 +262,7 @@ const AdminJobApplications = () => {
   ];
 
   return (
-    <div>
+    <>
       <div className="mb-6">
         <Button
           icon={<ArrowLeftOutlined />}
@@ -591,15 +590,16 @@ const AdminJobApplications = () => {
           </div>
         )}
       </Modal>
+
       <Modal
         title="Delete Application"
         open={deleteModalVisible}
         onOk={handleDelete}
         onCancel={handleDeleteCancel}
-        okText="Yes, Delete"
+        okText={deleteLoading ? "Deleting..." : "Yes, Delete"}
         cancelText="Cancel"
-        loading={deleteLoading}
-        okButtonProps={{ danger: true }}
+        okButtonProps={{ danger: true, loading: deleteLoading }}
+        cancelButtonProps={{ disabled: deleteLoading }}
       >
         <div className="py-4">
           <p className="text-gray-700">
@@ -609,7 +609,7 @@ const AdminJobApplications = () => {
           <p className="text-red-600 mt-2">This action cannot be undone.</p>
         </div>
       </Modal>
-    </div>
+    </>
   );
 };
 

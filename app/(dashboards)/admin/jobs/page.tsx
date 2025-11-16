@@ -11,7 +11,6 @@ import {
   Tag,
   Space,
   Popconfirm,
-  message,
   Switch,
   Upload,
   UploadProps,
@@ -30,6 +29,8 @@ import Link from "next/link";
 import dayjs from "dayjs";
 import Image from "next/image";
 import toast from "react-hot-toast";
+
+import { Button as CustomButton } from "@/app/components";
 
 const { TextArea } = Input;
 const { Option } = Select;
@@ -79,6 +80,7 @@ const AdminJobsPage = () => {
   const [logoUrl, setLogoUrl] = useState<string>("");
   const [jobs, setJobs] = useState<Job[]>([]);
   const [loading, setLoading] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [editingJob, setEditingJob] = useState<Job | null>(null);
   const [form] = Form.useForm();
@@ -266,6 +268,7 @@ const AdminJobsPage = () => {
 
   const handleSubmit = async (values: FormValues) => {
     try {
+      setSubmitting(true);
       const responsibilities = values.responsibilities
         ? values.responsibilities.split("\n").filter((line) => line.trim())
         : [];
@@ -315,7 +318,10 @@ const AdminJobsPage = () => {
           ? error.message
           : `Failed to ${editingJob ? "update" : "create"} job`
       );
+    } finally {
+      setSubmitting(false);
     }
+
   };
 
   const columns = [
@@ -441,14 +447,10 @@ const AdminJobsPage = () => {
               >
                 Refresh
               </Button>
-              <Button
-                type="primary"
-                icon={<PlusOutlined />}
-                onClick={handleCreate}
-                size="large"
-              >
+              <CustomButton variant="primary" onClick={handleCreate}>
+                <PlusOutlined className="mr-2" />
                 Create New Job
-              </Button>
+              </CustomButton>
             </Space>
           </div>
         </div>
@@ -644,14 +646,23 @@ const AdminJobsPage = () => {
             </Form.Item>
 
             <Form.Item>
-              <Space>
-                <Button type="primary" htmlType="submit" size="large">
+              <div className="flex items-center justify-center space-x-4">
+                <CustomButton
+                  loading={submitting}
+                  className="w-full"
+                  variant="primary"
+                  type="submit"
+                >
                   {editingJob ? "Update Job" : "Create Job"}
-                </Button>
-                <Button size="large" onClick={() => setModalOpen(false)}>
+                </CustomButton>
+                <CustomButton
+                  variant="gray"
+                  className="w-full"
+                  onClick={() => setModalOpen(false)}
+                >
                   Cancel
-                </Button>
-              </Space>
+                </CustomButton>
+              </div>
             </Form.Item>
           </Form>
         </Modal>

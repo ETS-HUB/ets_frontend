@@ -28,6 +28,9 @@ export async function POST(
       "phone",
       "location",
       "whyInterested",
+      "resumeUrl",
+      "coverLetter",
+      "linkedin",
     ];
 
     for (const field of requiredFields) {
