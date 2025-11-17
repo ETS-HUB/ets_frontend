@@ -208,7 +208,7 @@ const VolunteerApplicationsList = () => {
       </Link>
       <div className="mb-6">
         <div className="flex justify-between items-center mb-2">
-          <h1 className="text-2xl font-bold text-[#172554] mb-2">
+          <h1 className="text-xl md:text-2xl font-bold text-[#172554] mb-2">
             Volunteer Applications
           </h1>
           <Button
@@ -239,11 +239,22 @@ const VolunteerApplicationsList = () => {
             <Option value="Technical (Development)">
               Technical (Development)
             </Option>
-            <Option value="Design (UI/UX)">Design (UI/UX)</Option>
-            <Option value="Content & Media">Content & Media</Option>
-            <Option value="Events & Logistics">Events & Logistics</Option>
-            <Option value="Marketing & Outreach">Marketing & Outreach</Option>
-            <Option value="Operations & Admin">Operations & Admin</Option>
+            <Option value="Publicity & Promotion">Publicity & Promotion</Option>
+            <Option value="Design (Graphic)">Design (Graphic)</Option>
+            <Option value="Content & Social Media Management">
+              Content & Social Media Management
+            </Option>
+            <Option value="Content Writing & Blogging">
+              Content Writing & Blogging
+            </Option>
+            <Option value="Event Planning & Coordination">
+              Event Planning & Coordination
+            </Option>
+            <Option value="Community Engagement and Management">
+              Community Engagement and Management
+            </Option>
+            <Option value="Tech Instructors">Tech Instructors</Option>
+            <Option value="Content Creation">Content Creation</Option>
           </Select>
         </div>
 
@@ -267,6 +278,7 @@ const VolunteerApplicationsList = () => {
         loading={loading}
         dataSource={filteredApplications}
         rowKey="id"
+        scroll={{ x: "100%" }}
         pagination={{
           current: pagination.page,
           pageSize: pagination.limit,

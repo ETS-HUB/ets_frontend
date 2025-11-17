@@ -89,10 +89,10 @@ const AdminRegistrationPage = () => {
     <div className="min-h-screen">
       <div className="mx-auto">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-[#172554] mb-2">
+          <h1 className="text-xl md:text-3xl font-bold text-[#172554] mb-2">
             Registration Management
           </h1>
-          <p className="text-gray-500">
+          <p className="text-sm md:text-base text-gray-500">
             Overview of all applications and registrations
           </p>
         </div>

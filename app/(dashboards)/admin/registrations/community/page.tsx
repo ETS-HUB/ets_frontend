@@ -207,7 +207,7 @@ const CommunityApplicationList = () => {
               ...pagination,
               onChange: (page) => fetchData(page),
             }}
-            scroll={{ x: 1200 }}
+            scroll={{ x: "100%" }}
           />
       </div>
 

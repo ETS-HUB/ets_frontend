@@ -234,6 +234,7 @@ const JobApplicationsList = () => {
         columns={columns}
         dataSource={data}
         rowKey="id"
+        scroll={{ x: "100%" }}
         pagination={{
           ...pagination,
           onChange: (page) => fetchData(page),

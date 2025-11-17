@@ -330,7 +330,7 @@ const AdminVolunteersPage = () => {
           <h1 className="md:text-3xl text-2xl font-bold text-[#172554] mb-2">
             Volunteers
           </h1>
-          <p className="text-gray-500 mt-1">
+          <p className="text-gray-500 text-sm md:text-base mt-1">
             Manage all ETS volunteers and team members.
           </p>
         </div>
@@ -344,6 +344,7 @@ const AdminVolunteersPage = () => {
         dataSource={volunteers}
         rowKey="id"
         loading={loading}
+        scroll={{ x: "100%" }}
         pagination={{
           pageSize: 10,
           showSizeChanger: true,
