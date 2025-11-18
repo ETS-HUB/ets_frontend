@@ -37,6 +37,8 @@ interface JobData {
   requirements: string[];
   benefits: string[];
   application_deadline: string | null;
+  application_mail: string | null;
+  application_link: string;
   slug: string;
   created_at: string;
 }
@@ -400,24 +402,63 @@ const JobDetailsPage = () => {
             </section>
           )}
 
-          {jobData.application_deadline && (
-            <div className="bg-yellow-100 border border-yellow-400 rounded-lg px-5 py-4 mb-8">
-              <span className="text-yellow-900 text-base font-semibold">
-                Application Deadline:{" "}
-                {new Date(jobData.application_deadline).toLocaleDateString()}
-              </span>
-            </div>
+          {jobData.company?.trim().toLowerCase() !==
+            "ets community (talent & innovation hub)".toLowerCase() &&
+            jobData.application_mail && (
+              <>
+                <h3 className="text-lightgray font-semibold">How to Apply</h3>
+                <div className="text-secondary font-medium">
+                  Interested and qualified candidates should send their CVs to{" "}
+                  <Link
+                    href={`mailto:${jobData.application_mail}`}
+                    className="text-blue-600 underline ml-1"
+                  >
+                    {jobData.application_mail}
+                  </Link>
+                </div>
+              </>
+            )}
+
+        {jobData?.application_link && (
+            <>
+              <h3 className="text-lightgray font-semibold mt-6">
+                How to Apply
+              </h3>
+              <div className="text-secondary font-medium">
+                Interested and qualified candidates should apply via{" "}
+                <Link
+                  href={jobData.application_link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 underline ml-1"
+                >
+                  {jobData.application_link}
+                </Link>
+              </div>
+            </>
           )}
 
-          <div className="flex justify-center pt-6 pb-10">
-            <CustomButton
-              variant="primary"
-              onClick={handleApply}
-              className="w-full"
-            >
-              Apply now
-            </CustomButton>
-          </div>
+          {jobData.application_deadline &&
+            jobData.company === "ETS Community (Talent & Innovation Hub)" && (
+              <div className="bg-yellow-100 border border-yellow-400 rounded-lg px-5 py-4 mb-8">
+                <span className="text-yellow-900 text-base font-semibold">
+                  Application Deadline:{" "}
+                  {new Date(jobData.application_deadline).toLocaleDateString()}
+                </span>
+              </div>
+            )}
+
+          {jobData.company === "ETS Community (Talent & Innovation Hub)" && (
+            <div className="flex justify-center pt-6 pb-10">
+              <CustomButton
+                variant="primary"
+                onClick={handleApply}
+                className="w-full"
+              >
+                Apply now
+              </CustomButton>
+            </div>
+          )}
         </div>
       </div>
 

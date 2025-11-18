@@ -100,6 +100,8 @@ export async function POST(request: NextRequest) {
       requirements: body.requirements || [],
       benefits: body.benefits || [],
       application_deadline: body.applicationDeadline || null,
+      application_mail: body.applicationMail || null,
+      application_link: body.applicationLink || null,
       slug: slugData,
       is_active: true,
     };

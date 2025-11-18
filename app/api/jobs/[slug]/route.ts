@@ -65,6 +65,8 @@ export async function PUT(
       requirements: body.requirements || [],
       benefits: body.benefits || [],
       application_deadline: body.applicationDeadline || null,
+      application_mail: body.applicationMail || null,
+      application_link: body.applicationLink || null,
     };
 
     const { data, error } = await supabase

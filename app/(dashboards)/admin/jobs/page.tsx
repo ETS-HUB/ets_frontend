@@ -54,6 +54,8 @@ interface Job {
   is_active: boolean;
   slug: string;
   created_at: string;
+  application_mail?: string | null;
+  application_link?: string | null;
   applications_count?: number;
 }
 
@@ -68,6 +70,8 @@ interface FormValues {
   responsibilities?: string;
   requirements?: string;
   benefits?: string;
+  applicationMail?: string;
+  applicationLink?: string;
   applicationDeadline?: any;
 }
 
@@ -252,6 +256,8 @@ const AdminJobsPage = () => {
       responsibilities: jobWithDetails.responsibilities?.join("\n") || "",
       requirements: jobWithDetails.requirements?.join("\n") || "",
       benefits: jobWithDetails.benefits?.join("\n") || "",
+      applicationMail: job.application_mail || "",
+      applicationLink: job.application_link || "",
       applicationDeadline: job.application_deadline
         ? dayjs(job.application_deadline)
         : null,
@@ -290,6 +296,8 @@ const AdminJobsPage = () => {
         responsibilities,
         requirements,
         benefits,
+        applicationMail: values.applicationMail,
+        applicationLink: values.applicationLink,
         applicationDeadline: values.applicationDeadline
           ? values.applicationDeadline.format("YYYY-MM-DD")
           : null,
@@ -639,6 +647,14 @@ const AdminJobsPage = () => {
 
             <Form.Item name="benefits" label="Benefits (one per line)">
               <TextArea rows={4} placeholder="Enter benefits, one per line" />
+            </Form.Item>
+
+            <Form.Item name="applicationMail" label="Application Email">
+              <Input size="large" placeholder="e.g., hr@example.com" />
+            </Form.Item>
+
+            <Form.Item name="applicationLink" label="Application Link">
+              <Input size="large" placeholder="e.g., https://example.com/apply" />
             </Form.Item>
 
             <Form.Item name="applicationDeadline" label="Application Deadline">

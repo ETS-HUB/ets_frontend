@@ -1,3 +1,4 @@
+import { OfficeIcon } from "hugeicons-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -26,15 +27,21 @@ export const JobCard: React.FC<JobCardProps> = ({
     >
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
         <div className="flex items-start gap-3 sm:gap-4 flex-1">
-          <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg overflow-hidden border border-gray-200 flex items-center justify-center bg-white shrink-0">
-            <Image
-              width={56}
-              height={56}
-              src={companyLogo}
-              alt={company}
-              className="w-full h-full object-contain"
-            />
-          </div>
+          {companyLogo ? (
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg overflow-hidden border border-gray-200 flex items-center justify-center bg-white shrink-0">
+              <Image
+                width={56}
+                height={56}
+                src={companyLogo}
+                alt={company}
+                className="w-full h-full object-contain"
+              />
+            </div>
+          ) : (
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-lg overflow-hidden border border-gray-200 flex items-center justify-center bg-gray-100 text-gray-400 shrink-0">
+            <OfficeIcon className="w-6 h-6" />
+            </div>
+          )}
 
           <div className="flex-1 min-w-0">
             <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-1 sm:mb-2 leading-snug">
