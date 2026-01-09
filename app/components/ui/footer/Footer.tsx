@@ -93,6 +93,10 @@ const Footer = () => {
       name: "Join the Community",
       path: "/register/community",
     },
+    {
+      name: "ETS Innovation Hub",
+      path: "https://innovation.etshub.org",
+    },
   ];
 
   return (
@@ -141,7 +145,6 @@ const Footer = () => {
             </form>
           </div>
 
-          {/* Links Section */}
           <div className="grid w-full md:w-[60%] grid-cols-1 md:grid-cols-3 gap-8">
             <div className="flex flex-col gap-y-4">
               <h3 className="font-semibold uppercase tracking-wider">

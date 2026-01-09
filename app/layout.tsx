@@ -114,7 +114,7 @@ export const metadata: Metadata = {
     canonical: siteConfig.url,
   },
   verification: {
-    google: "your-google-verification-code",
+    google: "ZMC03WpwRdieS2-FmLEoV9TLi6aR36TkqAuP6m4eoS0",
   },
   category: "technology",
 };
