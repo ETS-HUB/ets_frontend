@@ -9,6 +9,7 @@ import Image from "next/image";
 
 import { Button } from "../..";
 import Logo from "@/assets/logo1.png";
+import LogoBlue from "@/assets/logoblue.png";
 
 interface NavbarProps {
   fixed?: boolean;
@@ -200,7 +201,7 @@ const Navbar: React.FC<NavbarProps> = ({ fixed }) => {
           aria-label="Education Technology Summit - Home"
         >
           <Image
-            src={Logo}
+            src={!scrolled ? Logo : LogoBlue}
             className="w-[90px] sm:w-[100px] md:w-[180px] lg:w-[180px] h-auto"
             alt="ETS logo"
             priority
