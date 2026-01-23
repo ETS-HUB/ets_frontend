@@ -86,7 +86,7 @@ const HeroSection: React.FC = () => {
 
         <div className="relative z-10 w-full h-full flex items-center justify-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 pt-16 sm:pt-20 md:pt-24 lg:pt-20">
           <div className="container mx-auto max-w-7xl h-full flex items-center justify-center">
-            <div className="animate-slide_up text-center flex flex-col items-center justify-center gap-4 sm:gap-5 md:gap-6 lg:gap-8 w-full max-w-5xl px-2">
+            <div className="animate-slide_up text-center flex flex-col items-center justify-center gap-4 sm:gap-5 md:gap-6 lg:gap-1 w-full max-w-5xl px-2">
               <h1 className="text-primary font-mont text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[50px] leading-tight sm:leading-snug md:leading-[1.3] lg:leading-[1.4] xl:leading-[70px] tracking-tight font-bold uppercase">
                 Bridging Tech Education Landscapes
               </h1>
