@@ -1,6 +1,6 @@
 "use client";
 import { useState, FormEvent, ChangeEvent, JSX } from "react";
-import { InstagramIcon, Linkedin01Icon, TwitterIcon } from "hugeicons-react";
+import { InstagramIcon, Linkedin01Icon, TwitterIcon, YoutubeIcon } from "hugeicons-react";
 import Button from "../button/Button";
 import Link from "next/link";
 
@@ -75,6 +75,11 @@ const Footer = () => {
       url: "https://www.linkedin.com/company/educationtechsummit/",
       icon: <Linkedin01Icon size={22} color="#fff" />,
     },
+    {
+      name: "YouTube",
+      url: "https://www.youtube.com/@etshubofficial",
+      icon: <YoutubeIcon size={22} color="#fff" />,
+    }
   ];
 
   const quickLinks: NavLink[] = [

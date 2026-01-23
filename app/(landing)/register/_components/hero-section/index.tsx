@@ -60,7 +60,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
           <div className="grid grid-cols-1 items-center w-full max-w-4xl">
             <div className={`animate-slide_up ${alignmentClasses}`}>
               <h1
-                className={`${titleSizeClasses[titleSize]} font-bold text-white md:mb-6 mb-4 leading-tight`}
+                className={`${titleSizeClasses[titleSize]} font-bold text-[#ffffff]! md:mb-6 mb-4 leading-tight`}
               >
                 {title}
               </h1>
