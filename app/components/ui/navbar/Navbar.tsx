@@ -240,7 +240,6 @@ const Navbar: React.FC<NavbarProps> = ({ fixed }) => {
           <Button variant="tertiary" width="full" className="ml-2">
             <Link
               href="/register/community"
-              target="_blank"
               rel="noopener noreferrer"
             >
               Register
@@ -312,7 +311,6 @@ const Navbar: React.FC<NavbarProps> = ({ fixed }) => {
                 <Button variant="primary" width="full">
                   <Link
                     href="/register/community"
-                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm"
                   >

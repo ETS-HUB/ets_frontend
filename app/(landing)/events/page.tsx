@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { Search01Icon } from "hugeicons-react";
+import { ArrowDown01Icon, Search01Icon } from "hugeicons-react";
+import { Dropdown } from "antd";
 
 import EventCard from "./_components/event-card";
 import { EventHeroSection } from "./_components";
@@ -34,7 +35,7 @@ const EventPage: React.FC = () => {
   });
 
   const allTags = Array.from(
-    new Set(events.flatMap((event) => event.tags))
+    new Set(events.flatMap((event) => event.tags)),
   ).sort();
 
   const eventsByMonth = groupEventsByMonth(events);
@@ -164,7 +165,10 @@ const EventPage: React.FC = () => {
       <div className="px-10 h-36 md:h-36 lg:h-4" />
       <div className="px-10 lg:container mx-auto md:py-12 md:mt-10">
         <div className="mb-8 md:mb-12 space-y-6">
-          <form onSubmit={handleSearch} className="flex gap-2 items-center max-w-2xl">
+          <form
+            onSubmit={handleSearch}
+            className="flex gap-2 items-center max-w-2xl"
+          >
             <div className="relative flex-1">
               <Search01Icon className="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400" />
               <input
@@ -188,21 +192,21 @@ const EventPage: React.FC = () => {
               <h3 className="text-sm font-semibold text-gray-700 uppercase tracking-wide">
                 Filter by Category
               </h3>
-              <div className="flex flex-wrap gap-2">
-                {allTags.map((tag) => (
-                  <button
-                    key={tag}
-                    onClick={() => handleTagFilter(tag)}
-                    className={`px-4 py-2 border rounded-lg text-sm font-medium transition-colors ${
-                      selectedTag === tag
-                        ? "bg-gray-900 text-white border-gray-900"
-                        : "border-gray-300 text-gray-700 hover:bg-gray-100"
-                    }`}
-                  >
-                    {tag}
-                  </button>
-                ))}
-              </div>
+              <Dropdown
+                menu={{
+                  items: allTags.map((tag) => ({
+                    key: tag,
+                    label: tag,
+                    onClick: () => handleTagFilter(tag),
+                  })),
+                }}
+                trigger={["click"]}
+              >
+                <button className="px-4 py-2 border capitalize border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors flex items-center gap-2">
+                  {selectedTag || "Select Category"}
+                  <ArrowDown01Icon className="w-4 h-4" />
+                </button>
+              </Dropdown>
             </div>
           )}
 
