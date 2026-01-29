@@ -58,7 +58,7 @@ const Navbar: React.FC<NavbarProps> = ({ fixed }) => {
         return false;
       }
     },
-    [isHomePage, router, scrollToSection]
+    [isHomePage, router, scrollToSection],
   );
 
   useEffect(() => {
@@ -69,7 +69,7 @@ const Navbar: React.FC<NavbarProps> = ({ fixed }) => {
         toggleMenu
       ) {
         const isMenuButton = (event.target as HTMLElement).closest(
-          '[data-menu-button="true"]'
+          '[data-menu-button="true"]',
         );
         if (!isMenuButton) {
           setToggleMenu(false);
@@ -176,7 +176,7 @@ const Navbar: React.FC<NavbarProps> = ({ fixed }) => {
         </ScrollLink>
       );
     },
-    [isMobile, navLinkStyles, handleSectionClick]
+    [isMobile, navLinkStyles, handleSectionClick],
   );
 
   const navItems: NavLinkItem[] = [
@@ -200,14 +200,26 @@ const Navbar: React.FC<NavbarProps> = ({ fixed }) => {
           className="font-semibold text-lg lg:text-3xl text-[#3745c0] shrink-0"
           aria-label="Education Technology Summit - Home"
         >
-          <Image
-            src={!scrolled ? Logo : LogoBlue}
-            className="w-[90px] sm:w-[100px] md:w-[180px] lg:w-[180px] h-auto"
-            alt="ETS logo"
-            priority
-            width={190}
-            height={60}
-          />
+          {!isMobile && (
+            <Image
+              src={!scrolled ? Logo : LogoBlue}
+              className="w-[90px] sm:w-[100px] md:w-[180px] lg:w-[180px] h-auto"
+              alt="ETS logo"
+              priority
+              width={190}
+              height={60}
+            />
+          )}
+          {isMobile && (
+            <Image
+              src={LogoBlue}
+              className="w-[100px] h-auto"
+              alt="ETS logo"
+              priority
+              width={190}
+              height={60}
+            />
+          )}
         </Link>
 
         <div

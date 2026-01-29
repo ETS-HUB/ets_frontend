@@ -108,7 +108,6 @@ const HeroSection: React.FC = () => {
                   >
                     <Link
                       href="/register/community"
-                      target="_blank"
                       rel="noopener noreferrer"
                       className="block w-full"
                     >

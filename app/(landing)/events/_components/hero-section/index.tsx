@@ -28,7 +28,6 @@ const EventHeroSection = () => {
                 <Button className="md:w-auto px-8 uppercase">
                   <Link
                     href="/register/community"
-                    target="_blank"
                   >
                     Join Community
                   </Link>
