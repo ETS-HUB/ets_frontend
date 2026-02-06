@@ -99,7 +99,8 @@ const Footer = () => {
       path: "/register/community",
     },
     {
-      name: "ETS Innovation Hub",
+      name: "Innovation Hub",
+      external: true,
       path: "https://innovation.etshub.org",
     },
   ];

@@ -196,7 +196,7 @@ const EventPage: React.FC = () => {
                 menu={{
                   items: allTags.map((tag) => ({
                     key: tag,
-                    label: tag,
+                    label: tag.charAt(0).toUpperCase() + tag.slice(1),
                     onClick: () => handleTagFilter(tag),
                   })),
                 }}

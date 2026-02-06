@@ -164,7 +164,11 @@ const InternshipRegistrationPage = () => {
                   <button
                     onClick={() => fetchJobs(pagination.page - 1)}
                     disabled={pagination.page === 1}
-                    className="px-4 py-2 border rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50"
+                    className={`px-4 py-2 border rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 ${
+                      pagination.page !== 1
+                        ? "bg-gray-900 cursor-pointer text-white hover:bg-gray-800"
+                        : "bg-gray-200 text-gray-400 cursor-not-allowed"
+                    }`}
                   >
                     Previous
                   </button>
@@ -176,7 +180,11 @@ const InternshipRegistrationPage = () => {
                   <button
                     onClick={() => fetchJobs(pagination.page + 1)}
                     disabled={pagination.page === pagination.totalPages}
-                    className="px-4 py-2 border rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50"
+                    className={`px-4 py-2 border rounded-lg disabled:opacity-50 disabled:cursor-not-allowed hover:bg-gray-50 ${
+                      pagination.page !== pagination.totalPages
+                        ? "bg-gray-900 cursor-pointer text-white hover:bg-gray-800"
+                        : "bg-gray-200 text-gray-400 cursor-not-allowed"
+                    }`}
                   >
                     Next
                   </button>

@@ -364,8 +364,7 @@ const TeamPage = () => {
                   </div>
                 </div>
                 <Link
-                  href="https://forms.gle/Huv91gi2yr6ZJs4o8"
-                  target="_blank"
+                  href="/register/volunteer"
                   className="mt-4 sm:mt-0"
                 >
                   <button className="bg-secondary hover:bg-lightblue text-white px-6 py-2 rounded-full font-semibold transition-colors">
