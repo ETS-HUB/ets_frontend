@@ -100,14 +100,13 @@ const Footer = () => {
     },
     {
       name: "Innovation Hub",
-      external: true,
       path: "https://innovation.etshub.org",
     },
   ];
 
   return (
     <footer className="mt-10 md:mt-20 pt-10 md:pt-20 bg-secondary text-primary">
-      <div className="lg:container mx-auto px-5 md:px-10">
+      <div className="md:container mx-auto px-5 md:px-10">
         <div className="flex flex-col gap-y-12 md:flex-row md:gap-x-8 pb-12">
           <div className="flex flex-col gap-y-6 w-full md:w-[38%] lg:w-[40%]">
             <div className="flex flex-col gap-y-2">
@@ -197,7 +196,7 @@ const Footer = () => {
                 contact@etshub.org
                 <div className="h-0.5 w-0 bg-primary transition-all duration-300 group-hover:w-full"></div>
               </Link>
-              <div className="gap-4 mt-4 hidden md:flex">
+              <div className="gap-4 mt-4 hidden md:grid grid-cols-2 w-fit">
                 {socialLinks.map((social, index) => (
                   <Link
                     key={index}

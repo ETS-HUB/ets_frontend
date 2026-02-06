@@ -5,9 +5,11 @@ import { Dropdown } from "antd";
 
 import EventCard from "./_components/event-card";
 import { EventHeroSection } from "./_components";
+import { NextEventHighlight } from "./_components/next-event";
 import { formatEventDate, groupEventsByMonth, sortMonthKeys } from "@/helpers";
 import { EventCardData } from "@/types/event";
 import { Event } from "@/lib/supabase";
+import { LatestEventRecording } from "./_components/latest-event-recording";
 
 interface PaginationInfo {
   currentPage: number;
@@ -160,10 +162,16 @@ const EventPage: React.FC = () => {
   }
 
   return (
-    <section>
+    <section className="overflow-x-hidden">
       <EventHeroSection />
-      <div className="px-10 h-36 md:h-36 lg:h-4" />
-      <div className="px-10 lg:container mx-auto md:py-12 md:mt-10">
+      <div className="lg:h-10 md:h-40 h-14" />
+      <NextEventHighlight />
+
+      <LatestEventRecording />
+
+      <div className="px-10 h-16 md:h-20" />
+
+      <div className="px-5 md:px-10 lg:container mx-auto md:py-12">
         <div className="mb-8 md:mb-12 space-y-6">
           <form
             onSubmit={handleSearch}
@@ -215,7 +223,7 @@ const EventPage: React.FC = () => {
               <span className="text-gray-600">Active filters:</span>
               {searchTerm && (
                 <span className="px-3 py-1 bg-blue-100 text-blue-800 rounded-full">
-                  Search: "{searchTerm}"
+                  Search: &apos;{searchTerm}&apos;
                 </span>
               )}
               {selectedTag && (

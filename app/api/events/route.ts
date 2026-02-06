@@ -11,6 +11,8 @@ export async function GET(request: Request) {
     const search = searchParams.get("search");
     const tag = searchParams.get("tag");
 
+    const upcoming = searchParams.get("upcoming") === "true";
+
     const pageSize = limit ? parseInt(limit) : 10;
     const currentPage = page ? parseInt(page) : 1;
     const from = (currentPage - 1) * pageSize;
@@ -20,6 +22,11 @@ export async function GET(request: Request) {
       .from("events")
       .select("*", { count: "exact" })
       .order("event_date", { ascending: true });
+
+    if (upcoming) {
+      const today = new Date().toISOString().split("T")[0];
+      query = query.gte("event_date", today);
+    }
 
     if (month) {
       const year = new Date().getFullYear();
@@ -36,7 +43,7 @@ export async function GET(request: Request) {
 
     if (search) {
       query = query.or(
-        `title.ilike.%${search}%,description.ilike.%${search}%,location.ilike.%${search}%`
+        `title.ilike.%${search}%,description.ilike.%${search}%,location.ilike.%${search}%`,
       );
     }
 
@@ -51,7 +58,7 @@ export async function GET(request: Request) {
     if (error) {
       return NextResponse.json(
         { error: "Failed to fetch events" },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
@@ -71,7 +78,7 @@ export async function GET(request: Request) {
   } catch (error) {
     return NextResponse.json(
       { error: "Internal server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -98,7 +105,7 @@ export async function POST(request: Request) {
     if (error) {
       return NextResponse.json(
         { error: "Failed to create event" },
-        { status: 500 }
+        { status: 500 },
       );
     }
 
@@ -106,7 +113,7 @@ export async function POST(request: Request) {
   } catch (error) {
     return NextResponse.json(
       { error: "Internal server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
