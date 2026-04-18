@@ -2,7 +2,7 @@
 import { Button } from "@/app/components";
 import { ArrowRight01Icon } from "hugeicons-react";
 import Link from "next/link";
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 
 interface YouTubeVideo {
   id: string;
@@ -15,23 +15,44 @@ interface YouTubeVideo {
 export const LatestEventRecording: React.FC = () => {
   const [latestVideo, setLatestVideo] = useState<YouTubeVideo | null>(null);
   const [loading, setLoading] = useState(true);
+  const YOUTUBE_API_KEY = process.env.NEXT_PUBLIC_YOUTUBE_API_KEY;
+  const CHANNEL_ID = process.env.NEXT_PUBLIC_YOUTUBE_CHANNEL_ID;
 
-  useEffect(() => {
-    fetchLatestVideo();
-  }, []);
-
-  const fetchLatestVideo = async () => {
+  const fetchLatestVideo = useCallback(async () => {
     try {
-      const response = await fetch("/api/youtube/latest");
+      if (!YOUTUBE_API_KEY || !CHANNEL_ID) {
+        return;
+      }
+
+      const response = await fetch(
+        `https://www.googleapis.com/youtube/v3/search?key=${YOUTUBE_API_KEY}&channelId=${CHANNEL_ID}&part=snippet,id&order=date&maxResults=1&type=video`,
+      );
+
       if (response.ok) {
         const data = await response.json();
-        setLatestVideo(data);
+
+        if (data.items && data.items.length > 0) {
+          const video = data.items[0];
+          setLatestVideo({
+            id: video.id.videoId,
+            title: video.snippet.title,
+            description: video.snippet.description,
+            publishedAt: video.snippet.publishedAt,
+            thumbnailUrl:
+              video.snippet.thumbnails.high?.url ||
+              video.snippet.thumbnails.default.url,
+          });
+        }
       }
-    } catch (error) {
+    } catch {
     } finally {
       setLoading(false);
     }
-  };
+  }, [CHANNEL_ID, YOUTUBE_API_KEY]);
+
+  useEffect(() => {
+    fetchLatestVideo();
+  }, [fetchLatestVideo]);
 
   if (loading) {
     return (
