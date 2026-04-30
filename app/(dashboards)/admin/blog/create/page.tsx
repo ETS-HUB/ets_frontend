@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft01Icon, ImageUploadIcon, TagIcon, CategoryIcon } from "hugeicons-react";
@@ -12,21 +12,18 @@ const CLOUDINARY_UPLOAD_PRESET =
   process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET!;
 const CLOUDINARY_CLOUD_NAME = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME!;
 
-const CATEGORIES = [
-  "Technology",
-  "Business",
-  "Lifestyle",
-  "Health",
-  "Education",
-  "Entertainment",
-  "Other",
-];
+interface BlogCategory {
+  id: string;
+  name: string;
+  slug: string;
+}
 
 const CreateBlogPage = () => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [uploading, setUploading] = useState(false);
   const [coverPreview, setCoverPreview] = useState<string | null>(null);
+  const [categories, setCategories] = useState<BlogCategory[]>([]);
   const [formData, setFormData] = useState({
     title: "",
     slug: "",
@@ -37,6 +34,19 @@ const CreateBlogPage = () => {
     tags: "",
     published: false,
   });
+
+  useEffect(() => {
+    const fetchCategories = async () => {
+      try {
+        const response = await fetch("/api/blog/categories");
+        if (response.ok) {
+          const data = await response.json();
+          setCategories(data);
+        }
+      } catch {}
+    };
+    fetchCategories();
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -242,9 +252,9 @@ const CreateBlogPage = () => {
                   className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all bg-white"
                 >
                   <option value="">Select category</option>
-                  {CATEGORIES.map((cat) => (
-                    <option key={cat} value={cat.toLowerCase()}>
-                      {cat}
+                  {categories.map((cat) => (
+                    <option key={cat.id} value={cat.slug}>
+                      {cat.name}
                     </option>
                   ))}
                 </select>

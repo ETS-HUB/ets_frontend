@@ -6,6 +6,7 @@ import {
   TeacherIcon,
   UserSharingIcon,
   JobShareIcon,
+  Blog01Icon,
 } from "hugeicons-react";
 
 import DashboardLayout from "../_components/DashboardLayout";
@@ -39,6 +40,11 @@ const AdminDashboardLayout = ({ children }: { children: React.ReactNode }) => {
       icon: JobShareIcon,
       label: "Jobs",
       path: "/admin/jobs",
+    },
+    {
+      icon: Blog01Icon,
+      label: "Blog",
+      path: "/admin/blog",
     },
   ];
 
