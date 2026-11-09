@@ -7,8 +7,8 @@ const CommunityRegistrationPage = () => {
   return (
     <>
       <HeroSection
-        title="ETS Community Registration Form"
-        description="Join us in building a vibrant and inclusive community. Whether you're looking to connect with like-minded individuals, share your skills, or contribute to community projects, we welcome you to be a part of our journey. Fill out the form to get started!"
+        title="Join the ETS Community"
+        description="Connect with innovators, build real-world tech projects, and grow your skills. Whether you're looking to collaborate, gain practical experience, or share your knowledge, you'll find your place here. Fill out the form to get started."
         titleSize="small"
         showButton={false}
       />

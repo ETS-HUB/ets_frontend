@@ -20,9 +20,7 @@ const EventHeroSection = () => {
                 ALL EVENTS
               </h1>
               <p className="text-blue-50 text-lg md:text-xl lg:text-2xl leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0">
-                Join us for exciting tech events, workshops, and networking
-                opportunities designed to foster innovation and collaboration
-                within our campus community.
+                Explore upcoming community events, interactive learning cohorts, and peer meetups. Whether you're mastering a new stack or looking for project collaborators, find your next step here.
               </p>
               <div className="flex justify-center lg:justify-start">
                 <Button className="md:w-auto px-8 uppercase">

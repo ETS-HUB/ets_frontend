@@ -90,7 +90,7 @@ const FourthSection: React.FC = () => {
         id: "img9",
       },
     ],
-    []
+    [],
   );
 
   const mobileImage = images[0];
@@ -153,7 +153,7 @@ const FourthSection: React.FC = () => {
   const goToPrev = (): void => {
     if (!isMobile) {
       setCurrentIndex((prevIndex) =>
-        prevIndex === 0 ? images.length - 1 : prevIndex - 1
+        prevIndex === 0 ? images.length - 1 : prevIndex - 1,
       );
     }
   };
@@ -207,16 +207,15 @@ const FourthSection: React.FC = () => {
               </h2>
             </div>
             <p className="text-sm sm:text-base md:text-lg text-gray leading-relaxed md:leading-[30px]">
-              Founded by university students, the Education Technology Summit
-              aims to bridge the gap between technology education and career
-              opportunities. We empower students to leverage the tech
-              sector&apos;s unprecedented potential.
+              The Education Technology Summit (ETS) is an edtech organization
+              bridging the gap between technical training and real-world career
+              success.
               <br />
               <br />
-              Through workshops, hackathons, and mentorship programs, we connect
-              students with industry partners and educators, equipping them to
-              build successful tech careers while addressing real-world
-              educational challenges.
+              Through hands-on workshops, project-driven hackathons, and
+              structured mentorship pipelines, we build the platform and
+              community infrastructure individuals need to master high-value
+              skills, connect with industry partners, and launch tech careers.
             </p>
             <div className="mt-6 md:mt-8">
               <a href="#contact">
@@ -348,7 +347,7 @@ const FourthSection: React.FC = () => {
 
                       document.removeEventListener(
                         "touchmove",
-                        handleTouchMove
+                        handleTouchMove,
                       );
                       document.removeEventListener("touchend", handleTouchEnd);
                     };

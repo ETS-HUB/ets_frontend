@@ -61,7 +61,7 @@ const SixthSection: React.FC = () => {
       {
         threshold: 0.2,
         rootMargin: "0px 0px -100px 0px",
-      }
+      },
     );
 
     const allRefs = [
@@ -116,9 +116,9 @@ const SixthSection: React.FC = () => {
               Unlock the Power of Community
             </h2>
             <p className="text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed sm:leading-relaxed md:leading-7 px-2">
-              We&apos;re dedicated to bridging the gaps in tech through
-              immersive workshops, hackathons, events, mentorship programs, and
-              more.
+              We bridge the divide in tech education through hands-on workshops,
+              hackathons, structured mentorship, and collaborative project
+              cohorts.
             </p>
           </div>
 
@@ -135,8 +135,8 @@ const SixthSection: React.FC = () => {
                   !isMobile && visibleItems.has(index)
                     ? "visible animate-slide-up"
                     : !isMobile
-                    ? "opacity-0 translate-y-8"
-                    : "visible"
+                      ? "opacity-0 translate-y-8"
+                      : "visible"
                 }`}
                 style={{
                   animationDelay:
@@ -159,8 +159,8 @@ const SixthSection: React.FC = () => {
                       !isMobile && visibleIcons.has(index)
                         ? "visible animate-scale-in"
                         : !isMobile
-                        ? "opacity-0 scale-75"
-                        : "visible"
+                          ? "opacity-0 scale-75"
+                          : "visible"
                     }`}
                     style={{
                       animationDelay:
@@ -205,8 +205,8 @@ const SixthSection: React.FC = () => {
                       !isMobile && visibleLinks.has(index)
                         ? "visible animate-slide-in-right"
                         : !isMobile
-                        ? "opacity-0 translate-x-4"
-                        : "visible"
+                          ? "opacity-0 translate-x-4"
+                          : "visible"
                     }`}
                     style={{
                       animationDelay:

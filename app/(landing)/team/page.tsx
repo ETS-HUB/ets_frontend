@@ -91,13 +91,13 @@ const TeamPage = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const index = parseInt(
-              entry.target.getAttribute("data-index") || "0"
+              entry.target.getAttribute("data-index") || "0",
             );
             setVisibleMembers((prev) => new Set([...prev, index]));
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     );
 
     if (window.innerWidth >= 768) {
@@ -132,9 +132,9 @@ const TeamPage = () => {
           </h1>
 
           <p className="text-xl md:text-2xl text-lightgray max-w-3xl mx-auto leading-relaxed mb-8">
-            We&apos;re students, creators, and tech enthusiasts united by our
-            passion for innovation and our commitment to fostering an inclusive
-            space where everyone can grow and contribute.
+            We are a team of builders, creators, and tech enthusiasts united by
+            a shared commitment to democratizing tech education and fostering an
+            inclusive platform where talent thrives.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -176,12 +176,12 @@ const TeamPage = () => {
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
               {teamMembers.map((member, index) => (
-                <Link
-                  key={member.id}
-                  href={`/team/${member.slug}`}
-                  className="block h-full"
-                >
-                  <div
+                // <Link
+                //   key={member.id}
+                //   href={`/team/${member.slug}`}
+                //   className="block h-full"
+                // >
+                  <div key={member.id}
                     ref={(el) => {
                       memberRefs.current[index] = el;
                     }}
@@ -218,7 +218,7 @@ const TeamPage = () => {
                         </div>
                       </div>
 
-                      <div className="absolute top-4 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0">
+                      {/* <div className="absolute top-4 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0">
                         {member?.twitter && (
                           <Link
                             href={member.twitter}
@@ -259,7 +259,7 @@ const TeamPage = () => {
                             <GithubIcon className="w-5 h-5 text-secondary" />
                           </Link>
                         )}
-                      </div>
+                      </div> */}
                     </div>
 
                     <div className="p-6 flex flex-col grow">
@@ -276,7 +276,6 @@ const TeamPage = () => {
 
                     <div className="absolute inset-0 border-2 border-tertiary rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                   </div>
-                </Link>
               ))}
             </div>
           )}
@@ -363,10 +362,7 @@ const TeamPage = () => {
                     </span>
                   </div>
                 </div>
-                <Link
-                  href="/register/volunteer"
-                  className="mt-4 sm:mt-0"
-                >
+                <Link href="/register/volunteer" className="mt-4 sm:mt-0">
                   <button className="bg-secondary hover:bg-lightblue text-white px-6 py-2 rounded-full font-semibold transition-colors">
                     Apply Now
                   </button>

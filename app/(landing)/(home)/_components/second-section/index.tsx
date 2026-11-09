@@ -16,10 +16,10 @@ const SecondSection: React.FC = () => {
   const registeredRef = useRef(null);
   const techTrackRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
-  const trained = useScrollCountUp(trainedRef, 100);
+  const trained = useScrollCountUp(trainedRef, 200);
   const meetups = useScrollCountUp(meetupsRef, 10);
   const registered = useScrollCountUp(registeredRef, 1000);
-  const techTrack = useScrollCountUp(techTrackRef, 4);
+  const techTrack = useScrollCountUp(techTrackRef, 10);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -91,7 +91,7 @@ const SecondSection: React.FC = () => {
                   isVisible ? "animate-fadeInUp delay-300" : "opacity-0"
                 }`}
               >
-                {techTrack}
+                {techTrack}+
               </span>
               <span className="text-base font-medium">Tech Tracks Offered</span>
             </div>

@@ -55,9 +55,8 @@ const FirstSection: React.FC = () => {
                 />
               </AnimationWrapper>
               <div>
-                ETS stands as a vibrant community that delves into innovative
-                solutions where education, entrepreneurship, and technology
-                converge.
+                Empowering the next generation of African tech leaders through
+                accessible education, mentorship, and practical innovation.
               </div>
               <AnimationWrapper
                 className="absolute md:-bottom-5 bottom-0 right-0 shrink-0 animate-scaleIn"
@@ -71,17 +70,17 @@ const FirstSection: React.FC = () => {
               </AnimationWrapper>
             </div>
             <p className="text-sm md:text-base lg:text-lg text-gray leading-relaxed md:leading-[30px]">
-              The technology sector offers unparalleled career opportunities and
-              significantly higher rewards. However, financial barriers prevent
-              many young people, especially in Africa, from accessing quality
-              tech education.
+              Education Technology Summit (ETS) is an edtech organization
+              operating at the convergence of technology, education, and
+              entrepreneurship. While the tech sector offers transformative
+              career paths, financial barriers restrict access for millions of
+              young people across Africa.
               <br />
               <br />
-              Education Technology Summit, a student-led organization, bridges
-              this gap by fostering peer-to-peer learning, mentorship, and
-              project development. We empower members to create innovative
-              solutions, driving positive change across Africa through
-              technology innovation.
+              ETS breaks down these barriers by engineering peer-to-peer
+              learning ecosystems, hands-on project development, and structured
+              mentorship—equipping members to build scalable solutions that
+              drive positive change.
             </p>
           </AnimationWrapper>
         </div>

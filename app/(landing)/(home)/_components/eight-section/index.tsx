@@ -9,22 +9,64 @@ import "swiper/css/pagination";
 
 const testimonials = [
   {
-    name: "Dr. Afolabi Brown",
-    role: "Lecturer, TASUED",
-    testimonial:
-      "The intersection of innovative teaching methods and cutting-edge technology reshaped my research direction. The networking opportunities allowed me to connect with fellow educators and tech entrepreneurs who share my passion for revolutionizing education.",
-  },
-  {
     name: "Micah Onwukah",
-    role: "400 lvl Technology Education, UNILAG",
+    role: "400 Level, Technology Education, UNILAG",
     testimonial:
-      "This group has done so much to help me plot a path for myself as i near the end my degree",
+      "This community has done so much to help me plot a clear career path as I near the end of my degree.",
   },
   {
-    name: "Suliat Adams",
-    role: "Post-Doc in Education Research, RWTh Aachen, Germany",
+    name: "Adesewa Opeyemi",
+    role: "300 Level, Computer Science, LASU",
     testimonial:
-      "There's very few things better than a group of driven, like minded individuals cheering you on every step of the way, There;s very few thingS better than being a part of ETS",
+      "Being part of ETS gave me access to hands-on tech projects and a supportive peer network that accelerated my practical skills.",
+  },
+  {
+    name: "Emmanuel Chukwuma",
+    role: "400 Level, Electrical Engineering, UI",
+    testimonial:
+      "ETS bridged the gap between my academic theory and real-world execution through collaborative cohorts and mentor support.",
+  },
+  {
+    name: "Zainab Mustapha",
+    role: "200 Level, Educational Technology, UNILAG",
+    testimonial:
+      "The workshops and study squads pushed me out of my comfort zone and helped me build confidence in modern tech stacks.",
+  },
+  {
+    name: "Tunde Bakare",
+    role: "500 Level, Mechanical Engineering, LASU",
+    testimonial:
+      "Finding a community of like-minded builders who cheer you on through every line of code has been the best part of my degree.",
+  },
+  {
+    name: "Blessing Okon",
+    role: "300 Level, Information Technology, UI",
+    testimonial:
+      "ETS gave me the mentorship and resources I needed to transition from passive learning to building real-world solutions.",
+  },
+  {
+    name: "Farouq Alabi",
+    role: "400 Level, Computer Science, UNILAG",
+    testimonial:
+      "The hackathons and project teams at ETS provided the practical experience I couldn't get inside a standard lecture hall.",
+  },
+  {
+    name: "Kemi Adeleke",
+    role: "300 Level, Business Education, LASU",
+    testimonial:
+      "ETS proved to me that tech education is for everyone, regardless of background, as long as you have the drive to learn.",
+  },
+  {
+    name: "David Nwachukwu",
+    role: "400 Level, Systems Engineering, UI",
+    testimonial:
+      "Collaborating on community-led projects helped me sharpen both my technical abilities and leadership skills.",
+  },
+  {
+    name: "Halimat Ibrahim",
+    role: "200 Level, Data Science, UNILAG",
+    testimonial:
+      "Being surrounded by passionate peers makes all the difference when tackling complex tech topics and career transitions.",
   },
 ];
 

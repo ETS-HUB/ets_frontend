@@ -52,7 +52,7 @@ const ThirdSection: React.FC = () => {
       {
         threshold: 0.3,
         rootMargin: "0px 0px -50px 0px",
-      }
+      },
     );
 
     itemRefs.current.forEach((ref) => {
@@ -116,11 +116,11 @@ const ThirdSection: React.FC = () => {
           </h3>
 
           <p className="text-gray text-sm sm:text-base md:text-lg leading-relaxed sm:leading-7 md:leading-8 lg:leading-9">
-            Our mission is to merge technology and education, creating a vibrant
-            student community. We foster collaboration, innovation, and
-            skill-building through workshops, project teams, and industry
-            partnerships, empowering students to become change-makers who drive
-            transformative impact and excel in a rapidly evolving digital world.
+            We merge technology and education to build a high-impact builder
+            community. Through structured workshops, project cohorts, and
+            industry partnerships, ETS fosters peer collaboration and practical
+            skill-building—empowering members to engineer innovative solutions
+            and thrive in a rapidly evolving digital economy.
           </p>
 
           <div className="flex items-stretch mt-4 sm:mt-6 md:mt-8 flex-col sm:flex-row gap-6 sm:gap-4 md:gap-6 lg:gap-8 w-full lg:w-full xl:w-[90%] mx-auto justify-between">
@@ -133,8 +133,8 @@ const ThirdSection: React.FC = () => {
                   !isMobile && visibleItems.has(index)
                     ? `animate-slide-in-right animate-delay-${index * 200}`
                     : !isMobile
-                    ? "opacity-0 translate-x-8"
-                    : "visible"
+                      ? "opacity-0 translate-x-8"
+                      : "visible"
                 }`}
                 style={{
                   animationDelay:
