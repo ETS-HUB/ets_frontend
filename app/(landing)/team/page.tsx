@@ -181,45 +181,44 @@ const TeamPage = () => {
                 //   href={`/team/${member.slug}`}
                 //   className="block h-full"
                 // >
-                <div
-                  key={member.id}
-                  ref={(el) => {
-                    memberRefs.current[index] = el;
-                  }}
-                  data-index={index}
-                  className={`group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 h-full flex flex-col ${
-                    visibleMembers.has(index)
-                      ? "md:animate-slideUpFowards md:opacity-100"
-                      : "md:opacity-0 md:translate-y-8"
-                  }`}
-                  style={{
-                    animationDelay: `${index * 100}ms`,
-                  }}
-                >
-                  <div className="aspect-4/5 bg-linear-to-br from-gray-100 to-gray-200 relative overflow-hidden shrink-0">
-                    {member.image ? (
-                      <Image
-                        src={member.image}
-                        alt={member.name}
-                        width={300}
-                        height={375}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                      />
-                    ) : (
-                      <div className="w-full h-full flex items-center justify-center">
-                        <UserIcon className="w-12 h-12 text-gray-400" />
-                      </div>
-                    )}
+                  <div key={member.id}
+                    ref={(el) => {
+                      memberRefs.current[index] = el;
+                    }}
+                    data-index={index}
+                    className={`group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 h-full flex flex-col ${
+                      visibleMembers.has(index)
+                        ? "md:animate-slideUpFowards md:opacity-100"
+                        : "md:opacity-0 md:translate-y-8"
+                    }`}
+                    style={{
+                      animationDelay: `${index * 100}ms`,
+                    }}
+                  >
+                    <div className="aspect-4/5 bg-linear-to-br from-gray-100 to-gray-200 relative overflow-hidden shrink-0">
+                      {member.image ? (
+                        <Image
+                          src={member.image}
+                          alt={member.name}
+                          width={300}
+                          height={375}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center">
+                          <UserIcon className="w-12 h-12 text-gray-400" />
+                        </div>
+                      )}
 
-                    <div className="absolute inset-0 bg-linear-to-t from-secondary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="absolute bottom-4 left-4 right-4">
-                        <p className="text-white text-sm leading-relaxed line-clamp-3">
-                          {member.bio}
-                        </p>
+                      <div className="absolute inset-0 bg-linear-to-t from-secondary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="absolute bottom-4 left-4 right-4">
+                          <p className="text-white text-sm leading-relaxed">
+                            {member.bio}
+                          </p>
+                        </div>
                       </div>
-                    </div>
 
-                    {/* <div className="absolute top-4 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0">
+                      {/* <div className="absolute top-4 right-4 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0">
                         {member?.twitter && (
                           <Link
                             href={member.twitter}
@@ -261,22 +260,22 @@ const TeamPage = () => {
                           </Link>
                         )}
                       </div> */}
-                  </div>
+                    </div>
 
-                  <div className="p-6 flex flex-col grow">
-                    <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-secondary transition-colors">
-                      {member.name}
-                    </h3>
-                    <p className="text-secondary font-semibold mb-2">
-                      {member.role}
-                    </p>
-                    <p className="text-sm text-gray-600 leading-relaxed">
-                      {member.additionalInfo}
-                    </p>
-                  </div>
+                    <div className="p-6 flex flex-col grow">
+                      <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-secondary transition-colors">
+                        {member.name}
+                      </h3>
+                      <p className="text-secondary font-semibold mb-2">
+                        {member.role}
+                      </p>
+                      <p className="text-sm text-gray-600 leading-relaxed">
+                        {member.additionalInfo}
+                      </p>
+                    </div>
 
-                  <div className="absolute inset-0 border-2 border-tertiary rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-                </div>
+                    <div className="absolute inset-0 border-2 border-tertiary rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                  </div>
               ))}
             </div>
           )}
