@@ -10,7 +10,9 @@ const EventHeroSection = () => {
     >
       <div className="bg-[#6D28D9] py-16 px-3 sm:px-4 md:px-6 lg:px-12 xl:px-20 2xl:px-40 relative overflow-hidden flex items-center justify-center min-h-full">
         <div className="absolute top-0 right-0 w-64 h-64 opacity-10">
-          <div className="w-full h-full bg-linear-to-br from-cyan-400 to-blue-400 rounded-full blur-3xl"></div>
+          <div className="w-full h-full bg-linear-to-br from-cyan-400 to-blue-400 rounded-full blur-3xl">
+            
+          </div>
         </div>
 
         <div className="px-5 md:px-10 md:container mx-auto h-full flex items-center justify-center lg:my-20 my-10 relative">
