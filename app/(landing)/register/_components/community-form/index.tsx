@@ -182,7 +182,7 @@ const CommunityForm = () => {
                 >
                   <Input
                     prefix={<MailOutlined />}
-                    placeholder="john.doe@university.edu"
+                    placeholder="john.doe@gmail.com"
                     size="large"
                   />
                 </Form.Item>
@@ -267,7 +267,7 @@ const CommunityForm = () => {
               <Col xs={24} md={12}>
                 <Form.Item
                   name="institution"
-                  label="University/Company"
+                  label="University / Affiliation"
                   rules={[
                     {
                       required: true,
@@ -276,7 +276,7 @@ const CommunityForm = () => {
                   ]}
                 >
                   <Input
-                    placeholder="University of Lagos / Tech Company"
+                    placeholder="e.g University of Lagos"
                     size="large"
                   />
                 </Form.Item>
@@ -284,7 +284,7 @@ const CommunityForm = () => {
               <Col xs={24} md={12}>
                 <Form.Item
                   name="fieldOfStudy"
-                  label="Field of Study/Work"
+                  label="Field of Study / Work"
                   rules={[
                     { required: true, message: "Please enter your field" },
                   ]}

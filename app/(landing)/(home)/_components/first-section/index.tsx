@@ -55,8 +55,8 @@ const FirstSection: React.FC = () => {
                 />
               </AnimationWrapper>
               <div>
-                Empowering the next generation of African tech leaders through
-                accessible education, mentorship, and practical innovation.
+                Equipping emerging African tech talent with practical skills,
+                peer mentorship, and real-world project experience.
               </div>
               <AnimationWrapper
                 className="absolute md:-bottom-5 bottom-0 right-0 shrink-0 animate-scaleIn"
@@ -70,17 +70,17 @@ const FirstSection: React.FC = () => {
               </AnimationWrapper>
             </div>
             <p className="text-sm md:text-base lg:text-lg text-gray leading-relaxed md:leading-[30px]">
-              Education Technology Summit (ETS) is an edtech organization
+              Education Technology Summit (ETS) is a builder-led tech community
               operating at the convergence of technology, education, and
               entrepreneurship. While the tech sector offers transformative
-              career paths, financial barriers restrict access for millions of
-              young people across Africa.
+              career paths, financial and structural barriers still restrict
+              access for millions of young people across Africa.
               <br />
               <br />
-              ETS breaks down these barriers by engineering peer-to-peer
-              learning ecosystems, hands-on project development, and structured
-              mentorship—equipping members to build scalable solutions that
-              drive positive change.
+              ETS breaks down these barriers through peer-to-peer learning
+              ecosystems, hands-on project cohorts, and direct industry
+              mentorship—equipping members to build real-world solutions and
+              launch sustainable tech careers.
             </p>
           </AnimationWrapper>
         </div>

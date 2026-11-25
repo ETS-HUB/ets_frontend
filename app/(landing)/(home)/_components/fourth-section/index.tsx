@@ -207,15 +207,12 @@ const FourthSection: React.FC = () => {
               </h2>
             </div>
             <p className="text-sm sm:text-base md:text-lg text-gray leading-relaxed md:leading-[30px]">
-              The Education Technology Summit (ETS) is an edtech organization
-              bridging the gap between technical training and real-world career
-              success.
-              <br />
-              <br />
+              The Education Technology Summit (ETS) is a tech community bridging
+              the gap between technical learning and real-world career success.
               Through hands-on workshops, project-driven hackathons, and
-              structured mentorship pipelines, we build the platform and
-              community infrastructure individuals need to master high-value
-              skills, connect with industry partners, and launch tech careers.
+              structured mentorship, we provide the platform and peer network
+              individuals need to master high-value skills, connect with
+              industry partners, and launch tech careers.
             </p>
             <div className="mt-6 md:mt-8">
               <a href="#contact">

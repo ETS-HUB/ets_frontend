@@ -95,9 +95,8 @@ const HeroSection: React.FC = () => {
 
               <div className="flex flex-col items-center gap-5 sm:gap-6 md:gap-7 mt-2 sm:mt-3 md:mt-4 w-full">
                 <p className="text-white text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl leading-relaxed sm:leading-relaxed md:leading-[1.7] lg:leading-[30px] font-medium max-w-3xl px-2">
-                  ETS is an innovative edtech organization building scalable
-                  solutions at the convergence of education, entrepreneurship,
-                  and technology.
+                  ETS is a tech community accelerating emerging talent at the
+                  convergence of education, entrepreneurship, and technology.
                 </p>
 
                 <div className="w-fit sm:w-auto">
