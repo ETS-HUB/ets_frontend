@@ -1,5 +1,6 @@
 export { default as HeroSection } from "./hero-section";
 export { default as SponsorsSection } from "./sponsors-section";
+export { default as LearnBannerSection } from "./learn-banner-section";
 export { default as FirstSection } from "./first-section";
 export { default as SecondSection } from "./second-section";
 export { default as ThirdSection } from "./third-section";

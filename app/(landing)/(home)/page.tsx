@@ -10,6 +10,7 @@ import {
   EightSection,
   ContactFormSection,
   SponsorsSection,
+  LearnBannerSection,
 } from "./_components";
 
 const HomePage: React.FC = () => {
@@ -21,6 +22,7 @@ const HomePage: React.FC = () => {
       <FourthSection />
       <SecondSection />
       <ThirdSection />
+      <LearnBannerSection />
       <SixthSection />
       <SeventhSection />
       <EightSection />

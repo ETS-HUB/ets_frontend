@@ -237,11 +237,17 @@ const Navbar: React.FC<NavbarProps> = ({ fixed }) => {
           <Link href="/team" className={navLinkStyles}>
             Meet the team
           </Link>
-          <Button variant="tertiary" width="full" className="ml-2">
+          <Button variant="secondary" width="full" className="ml-2">
             <Link
-              href="/register/community"
+              href="http://learn.etshub.org"
+              target="_blank"
               rel="noopener noreferrer"
             >
+              Learn
+            </Link>
+          </Button>
+          <Button variant="tertiary" width="full" className="-ml-3">
+            <Link href="/register/community" rel="noopener noreferrer">
               Register
             </Link>
           </Button>
@@ -305,6 +311,18 @@ const Navbar: React.FC<NavbarProps> = ({ fixed }) => {
                   onClick={() => setToggleMenu(false)}
                 >
                   Meet the team
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="http://learn.etshub.org"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => setToggleMenu(false)}
+                  className="flex items-center gap-2 text-base font-semibold text-lightblue"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-lightblue animate-pulse" />
+                  Learn Platform
                 </Link>
               </li>
               <li className="pt-2">

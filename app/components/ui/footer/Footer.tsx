@@ -1,6 +1,11 @@
 "use client";
 import { useState, FormEvent, ChangeEvent, JSX } from "react";
-import { InstagramIcon, Linkedin01Icon, TwitterIcon, YoutubeIcon } from "hugeicons-react";
+import {
+  InstagramIcon,
+  Linkedin01Icon,
+  TwitterIcon,
+  YoutubeIcon,
+} from "hugeicons-react";
 import Button from "../button/Button";
 import Link from "next/link";
 
@@ -42,7 +47,7 @@ const Footer = () => {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({ email }),
-        }
+        },
       );
 
       if (response.ok) {
@@ -79,7 +84,7 @@ const Footer = () => {
       name: "YouTube",
       url: "https://www.youtube.com/@etshubofficial",
       icon: <YoutubeIcon size={22} color="#fff" />,
-    }
+    },
   ];
 
   const quickLinks: NavLink[] = [
@@ -94,13 +99,13 @@ const Footer = () => {
     { name: "Events", path: "/events" },
     // { name: "Blog", path: "#" },
     { name: "Join the Team", path: "/register/volunteer" },
-    {
-      name: "Join the Community",
-      path: "/register/community",
-    },
+    { name: "Join the Community", path: "/register/community" },
+    { name: "Donate", path: "/donate" },
+    { name: "ETS Learn", path: "http://learn.etshub.org", external: true },
     {
       name: "Innovation Hub",
       path: "https://innovation.etshub.org",
+      external: true,
     },
   ];
 
@@ -144,8 +149,8 @@ const Footer = () => {
                 {submitting
                   ? "Subscribing..."
                   : submitted
-                  ? "Subscribed!"
-                  : "Subscribe"}
+                    ? "Subscribed!"
+                    : "Subscribe"}
               </Button>
             </form>
           </div>
