@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat, Varela_Round } from "next/font/google";
 import "./globals.css";
+import DonateFloater from "./components/DonateFloater";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -133,6 +134,7 @@ export default function RootLayout({
         className={`${montserrat.variable} ${varelaRound.variable} antialiased`}
       >
         {children}
+        <DonateFloater />
       </body>
     </html>
   );

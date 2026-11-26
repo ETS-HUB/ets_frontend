@@ -17,6 +17,7 @@ interface CardItem {
   title: string;
   description: string;
   ctaText: string;
+  to: string;
 }
 
 const SixthSection: React.FC = () => {
@@ -82,6 +83,7 @@ const SixthSection: React.FC = () => {
       description:
         "Connect with innovators, developers, designers, and founders who share your passion for tech",
       ctaText: "Connect Now",
+      to: "/register/community",
     },
     {
       icon: HandPrayerIcon,
@@ -89,6 +91,7 @@ const SixthSection: React.FC = () => {
       description:
         "Collaborate with us to drive positive change and empower the next generation of tech leaders",
       ctaText: "Partner Today",
+      to: "#contact",
     },
     {
       icon: PiggyBankIcon,
@@ -96,6 +99,7 @@ const SixthSection: React.FC = () => {
       description:
         "Contribute to our cause and help us create a more inclusive and accessible tech ecosystem",
       ctaText: "Support Us",
+      to: "/donate",
     },
   ];
 
@@ -189,9 +193,9 @@ const SixthSection: React.FC = () => {
                 </p>
 
                 <a
-                  href="#contact"
+                  href={item.to}
                   className="flex items-center gap-x-1.5 sm:gap-x-2 text-sm sm:text-base md:text-base lg:text-lg font-medium mt-1 sm:mt-2 transition-all duration-300 ease-in-out group-hover:text-lightblue"
-                  aria-label={`${item.ctaText} - Navigate to contact section`}
+                  aria-label={`${item.ctaText} - Navigate to ${item.to}`}
                 >
                   <span className="relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-lightblue after:transition-all after:duration-300 after:ease-in-out group-hover:after:w-full">
                     {item.ctaText}

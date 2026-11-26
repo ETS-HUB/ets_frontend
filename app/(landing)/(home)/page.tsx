@@ -9,12 +9,14 @@ import {
   SeventhSection,
   EightSection,
   ContactFormSection,
+  SponsorsSection,
 } from "./_components";
 
 const HomePage: React.FC = () => {
   return (
     <div className="overflow-x-hidden">
       <HeroSection />
+      <SponsorsSection />
       <FirstSection />
       <FourthSection />
       <SecondSection />
